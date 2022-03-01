@@ -4,10 +4,16 @@ public class Lesson01 {
     public static void main(String[] args) {
         System.out.println("––––––––––––––––––––––––––––––");
         printThreeWords();
+
+        System.out.println("––––––––––––––––––––––––––––––");
+        checkSumSign();
+
         System.out.println("––––––––––––––––––––––––––––––");
         printColor();
+
         System.out.println("––––––––––––––––––––––––––––––");
         compareNumbers();
+
         System.out.println("––––––––––––––––––––––––––––––");
 
     }
@@ -19,6 +25,17 @@ public class Lesson01 {
         System.out.println("Apple");
     }
 
+
+    //======================================================================
+    private static void checkSumSign() {
+        int a = -200;
+        int b = 50;
+        if (a + b >= 0){
+            System.out.println("Сумма положительная");
+        } else {
+            System.out.println("Сумма отрицательная");
+        }
+    }
 
     //======================================================================
     @SuppressWarnings("ConstantConditions")
