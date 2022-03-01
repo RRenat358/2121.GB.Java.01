@@ -10,8 +10,6 @@ public class Lesson01 {
         compareNumbers();
         System.out.println("––––––––––––––––––––––––––––––");
 
-
-
     }
     //======================================================================
     private static void printThreeWords() {
