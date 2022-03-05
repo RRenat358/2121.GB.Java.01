@@ -25,10 +25,7 @@ public class task5 {
 //        System.out.println(leapYear(inputYear));
         leapYear(inputYear);
         System.out.println("––––––––––––––––––––––––––––––");
-
-
     }
-
     //======================================================================
     private static void leapYear(int y) {
         if (y % 100 == 0) {
