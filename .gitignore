@@ -1,5 +1,4 @@
-/.idea/.gitignore
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/vcs.xml
+/.idea/
+
+/.gitignore
 /2121.GB.Java.01.iml
