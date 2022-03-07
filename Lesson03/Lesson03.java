@@ -2,19 +2,29 @@ package Lesson03;
 
 import java.util.Random;
 
-
 public class Lesson03 {
     public static void main(String[] args) {
+        int arrLength = 15;
+        int arrRandomDelta = 12;
 
+        System.out.println("––– РандомМассив –––––––––––––––––––––––––––");
+        int[] arrayRandom = new int[arrLength];
+        String arrRandomToString = "";
+        Random random = new Random();
+        for (int i = 0; i < arrayRandom.length; i++) {
+            arrayRandom[i] = random.nextInt(arrRandomDelta);
+            arrRandomToString = arrRandomToString + arrayRandom[i] + " ";
+        }
+        System.out.println(arrRandomToString);
+        System.out.println();
         System.out.println("––– 01 –––––––––––––––––––––––––––");
         System.out.println("Инвертировать = 0 на 1, 1 на 0");
-        int[] array01 = new int[10];                                  // ◀◀◀ Ввод. Размер массива
+        int[] array01 = new int[arrLength];                                  // ◀◀◀ Ввод. Размер массива
         int[] array01Invert = new int[array01.length];
         String array01ToString = "";
         String array01InvertToString = "";
 
         for (int i = 0; i < array01.length; i++) {
-            Random random = new Random();
             array01[i] = random.nextInt(2);
             array01ToString = array01ToString + array01[i] + " ";
             if (array01[i] == 0) {
@@ -26,7 +36,7 @@ public class Lesson03 {
         }
         System.out.println(array01ToString);
         System.out.println(array01InvertToString);
-
+        System.out.println();
         //======================================================================
         System.out.println("––– 02 –––––––––––––––––––––––––––");
         System.out.println("Массив от 1 до 100");
@@ -36,38 +46,31 @@ public class Lesson03 {
             System.out.print(array100[i] + " ");
         }
         System.out.println();
-
+        System.out.println();
         //======================================================================
         System.out.println("––– 03 –––––––––––––––––––––––––––");
         System.out.println("Числа меньшие 6 умножить на 2");
-        int[] arrayMultBy2 = new int[10];                               // ◀◀◀ ввод. Размер массива
-        int[] arrayMultBy2Invert = new int[arrayMultBy2.length];
+        int[] arrayMultBy2 = new int[arrLength];
         String arrayMultBy2ToString = "";
-        String arrayMultBy2InvertToString = "";
 
-        for (int i = 0; i < array01.length; i++) {
-            Random random = new Random();
-            arrayMultBy2[i] = random.nextInt(10);
-            arrayMultBy2ToString = arrayMultBy2ToString + arrayMultBy2[i] + " ";
-            if (arrayMultBy2[i] < 6) {
-                arrayMultBy2Invert[i] = arrayMultBy2[i] * 2;
+        for (int i = 0; i < arrayRandom.length; i++) {
+            if (arrayRandom[i] < 6) {
+                arrayMultBy2[i] = arrayRandom[i] * 2;
             } else {
-                arrayMultBy2Invert[i] = arrayMultBy2[i];
+                arrayMultBy2[i] = arrayRandom[i];
             }
-            arrayMultBy2InvertToString = arrayMultBy2InvertToString + arrayMultBy2Invert[i] + " ";
+            arrayMultBy2ToString = arrayMultBy2ToString + arrayMultBy2[i] + " ";
         }
+        System.out.println(arrRandomToString);
         System.out.println(arrayMultBy2ToString);
-        System.out.println(arrayMultBy2InvertToString);
-
+        System.out.println();
         //======================================================================
         System.out.println("––– 04 –––––––––––––––––––––––––––");
         System.out.println("Заполнить диагонали квадратного массива");
-        int arraySqLength = 13;                 // ◀◀◀ ввод. Размер массива
-
-        String[][] arraySqDiagonal = new String[arraySqLength][arraySqLength];
+        String[][] arraySqDiagonal = new String[arrLength][arrLength];
         for (int i = 0; i < arraySqDiagonal.length; i++) {
             for (int j = 0; j < arraySqDiagonal[i].length; j++) {
-                if (i == j || i == arraySqLength - 1 - j) {
+                if (i == j || i == arrLength - 1 - j) {
                     arraySqDiagonal[i][j] = " ⬛ ";
                 } else {
                     arraySqDiagonal[i][j] = " · ";
@@ -76,16 +79,41 @@ public class Lesson03 {
             }
             System.out.println();
         }
+        System.out.println();
         //======================================================================
         System.out.println("––– 05 –––––––––––––––––––––––––––");
         System.out.println("Массив длиной len, каждая ячейка равна initialValue");
-        int len = 13;
+        int len = arrLength;
         int initialValue = 5;
         arr02(len, initialValue);
         System.out.println();
-        System.out.println("––– -- –––––––––––––––––––––––––––");
-    }
+        System.out.println();
+        
+        //======================================================================
+        System.out.println("––– 06 –––––––––––––––––––––––––––");
+        System.out.println("Найти в массиве Минимальное и Максимальное число");
+        int arrMinElement;
+        int arrMaxElement = 0;
+        for (int j : arrayRandom) {
+            if (arrMaxElement < j) {
+                arrMaxElement = j;
+            }
+        }
+        arrMinElement = arrayRandom[0];
+        for (int i : arrayRandom) {
+            if (arrMinElement > i) {
+                arrMinElement = i;
+            }
+        }
+        System.out.println(arrRandomToString);
+        System.out.printf("Минимальное == %s \nМаксимальное == %s \n", arrMinElement, arrMaxElement);
+        System.out.println();
 
+
+
+        System.out.println("––––––––––––––––––––––––––––––");
+    }
+    //======================================================================
     public static void arr02(int len, int initialValue) {
         int[] arr = new int[len];
         for (int i = 0; i < arr.length; i++) {
