@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Lesson03 {
     public static void main(String[] args) {
+        //Ввод данных здесь
         int arrLength = 15;
         int arrRandomDelta = 12;
 
@@ -19,7 +20,7 @@ public class Lesson03 {
         System.out.println();
         System.out.println("––– 01 –––––––––––––––––––––––––––");
         System.out.println("Инвертировать = 0 на 1, 1 на 0");
-        int[] array01 = new int[arrLength];                                  // ◀◀◀ Ввод. Размер массива
+        int[] array01 = new int[arrLength];
         int[] array01Invert = new int[array01.length];
         String array01ToString = "";
         String array01InvertToString = "";
@@ -40,7 +41,7 @@ public class Lesson03 {
         //======================================================================
         System.out.println("––– 02 –––––––––––––––––––––––––––");
         System.out.println("Массив от 1 до 100");
-        int[] array100 = new int[100];                                  // ◀◀◀ Ввод. Размер массива
+        int[] array100 = new int[100];
         for (int i = 0; i < array100.length; i++) {
             array100[i] = i + 1;
             System.out.print(array100[i] + " ");
