@@ -2,66 +2,95 @@ package Lesson03;
 
 import java.util.Random;
 
-/*
-Домашнее задание
-------------------------------
-1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1,
-0, 0 ]. С помощью цикла и условия заменить 0 на 1, 1 на 0;
-------------------------------
-2. Задать пустой целочисленный массив длиной 100. С помощью цикла заполнить его
-значениями 1 2 3 4 5 6 7 8 … 100;
-------------------------------
-3. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6
-умножить на 2;
-------------------------------
-4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов
-одинаковое), и с помощью цикла(-ов) заполнить его диагональные элементы единицами
-(можно только одну из диагоналей, если обе сложно). Определить элементы одной из
-диагоналей можно по следующему принципу: индексы таких элементов равны, то есть [0][0],
-[1][1], [2][2], …, [n][n];
-------------------------------
-5. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий
-одномерный массив типа int длиной len, каждая ячейка которого равна initialValue;
-------------------------------
-6. * Задать одномерный массив и найти в нем минимальный и максимальный элементы ;
-------------------------------
-7. ** Написать метод, в который передается не пустой одномерный целочисленный массив,
-метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части
-массива равны.
-Примеры:
-checkBalance([2, 2, 2, 1, 2, 2, ||| 10, 1]) → true, т.е. 2 + 2 + 2 + 1 + 2 + 2 = 10 + 1
-checkBalance([1, 1, 1, ||| 2, 1]) → true, т.е. 1 + 1 + 1 = 2 + 1
-граница показана символами |||, эти символы в массив не входят и не имеют никакого
-отношения к ИЛИ.
-------------------------------
-8. *** Написать метод, которому на вход подается одномерный массив и число n (может быть
-положительным, или отрицательным), при этом метод должен сместить все элементы массива
-на n позиций. Элементы смещаются циклично. Для усложнения задачи нельзя пользоваться
-вспомогательными массивами. Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5,
-6, 1] при n = -2 (на два влево) -> [ 6, 1, 3, 5 ]. При каком n в какую сторону сдвиг можете
-выбирать сами.
-*/
+
 public class Lesson03 {
     public static void main(String[] args) {
-        System.out.println("––––––––––––––––––––––––––––––");
-        int[] array01 = new int[10];
-        String arrayToString = "";
-//        for (int a : array01) {
-//            Random random = new Random();
-//            a = random.nextInt(10);
-//            arrayToString = arrayToString  + a + " ";
-//        }
+
+        System.out.println("––– 01 –––––––––––––––––––––––––––");
+        System.out.println("Инвертировать = 0 на 1, 1 на 0");
+        int[] array01 = new int[10];                                  // ◀◀◀ Ввод. Размер массива
+        int[] array01Invert = new int[array01.length];
+        String array01ToString = "";
+        String array01InvertToString = "";
+
         for (int i = 0; i < array01.length; i++) {
             Random random = new Random();
-            array01[i] = random.nextInt(10);
-//            arrayToString = arrayToString  + a + " ";
+            array01[i] = random.nextInt(2);
+            array01ToString = array01ToString + array01[i] + " ";
+            if (array01[i] == 0) {
+                array01Invert[i] = 1;
+            } else {
+                array01Invert[i] = 0;
+            }
+            array01InvertToString = array01InvertToString + array01Invert[i] + " ";
         }
+        System.out.println(array01ToString);
+        System.out.println(array01InvertToString);
 
+        //======================================================================
+        System.out.println("––– 02 –––––––––––––––––––––––––––");
+        System.out.println("Массив от 1 до 100");
+        int[] array100 = new int[100];                                  // ◀◀◀ Ввод. Размер массива
+        for (int i = 0; i < array100.length; i++) {
+            array100[i] = i + 1;
+            System.out.print(array100[i] + " ");
+        }
+        System.out.println();
 
-//        System.out.println(arrayToString);
-        System.out.println(array01[0]);System.out.println(array01[1]);System.out.println(array01[2]);
-        System.out.println("––––––––––––––––––––––––––––––");
+        //======================================================================
+        System.out.println("––– 03 –––––––––––––––––––––––––––");
+        System.out.println("Числа меньшие 6 умножить на 2");
+        int[] arrayMultBy2 = new int[10];                               // ◀◀◀ ввод. Размер массива
+        int[] arrayMultBy2Invert = new int[arrayMultBy2.length];
+        String arrayMultBy2ToString = "";
+        String arrayMultBy2InvertToString = "";
 
+        for (int i = 0; i < array01.length; i++) {
+            Random random = new Random();
+            arrayMultBy2[i] = random.nextInt(10);
+            arrayMultBy2ToString = arrayMultBy2ToString + arrayMultBy2[i] + " ";
+            if (arrayMultBy2[i] < 6) {
+                arrayMultBy2Invert[i] = arrayMultBy2[i] * 2;
+            } else {
+                arrayMultBy2Invert[i] = arrayMultBy2[i];
+            }
+            arrayMultBy2InvertToString = arrayMultBy2InvertToString + arrayMultBy2Invert[i] + " ";
+        }
+        System.out.println(arrayMultBy2ToString);
+        System.out.println(arrayMultBy2InvertToString);
 
+        //======================================================================
+        System.out.println("––– 04 –––––––––––––––––––––––––––");
+        System.out.println("Заполнить диагонали квадратного массива");
+        int arraySqLength = 13;                 // ◀◀◀ ввод. Размер массива
+
+        String[][] arraySqDiagonal = new String[arraySqLength][arraySqLength];
+        for (int i = 0; i < arraySqDiagonal.length; i++) {
+            for (int j = 0; j < arraySqDiagonal[i].length; j++) {
+                if (i == j || i == arraySqLength - 1 - j) {
+                    arraySqDiagonal[i][j] = " ⬛ ";
+                } else {
+                    arraySqDiagonal[i][j] = " · ";
+                }
+                System.out.print(arraySqDiagonal[i][j]);
+            }
+            System.out.println();
+        }
+        //======================================================================
+        System.out.println("––– 05 –––––––––––––––––––––––––––");
+        System.out.println("Массив длиной len, каждая ячейка равна initialValue");
+        int len = 13;
+        int initialValue = 5;
+        arr02(len, initialValue);
+        System.out.println();
+        System.out.println("––– -- –––––––––––––––––––––––––––");
+    }
+
+    public static void arr02(int len, int initialValue) {
+        int[] arr = new int[len];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = initialValue;
+            System.out.print(arr[i] + " ");
+        }
     }
 }
