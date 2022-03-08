@@ -29,7 +29,7 @@ public class arrCheckBalance {
         (граница показана символами |||, эти символы в массив не входят и не имеют никакого отношения к ИЛИ)*/
         System.out.println(arrRandomToString);
 
-        boolean isBalance = arrCheckBalance(arrayRandom, arrLength);
+        int isBalance = arrCheckBalance(arrayRandom, arrLength);
         System.out.println(isBalance);
 
         //======================================================================
@@ -55,15 +55,17 @@ public class arrCheckBalance {
     //0, 1, 1, 2
     //1, 1, 2, 0
 
+    //0, 2, 1, 1
 
-    private static boolean arrCheckBalance(int[] arrayRandom, int arrLength) {
+
+    private static int arrCheckBalance(int[] arrayRandom, int arrLength) {
         int arrLengthCount = arrLength;
         int arrLengthCountA = 1;
         int arrLengthCountZ = 1;
-//        arrayRandom = new int[]{2, 0, 0, 2};
-//        System.out.println("0, 1, 1, 1");
+//        arrayRandom = new int[]{0, 2, 1, 1};
+//        System.out.println("0, 2, 1, 1");
 
-        boolean isCheckElement = true;
+        int isCheckElement = 0;
 
         int iA = 0;
         int iZ = arrLength - 1;
@@ -71,18 +73,26 @@ public class arrCheckBalance {
         int arrSumElementZ = arrayRandom[iZ];
 
         for (; arrLengthCount >= 0; ) {
+
+            if (arrSumElementA == arrSumElementZ && arrLengthCount == 0) {
+                return isCheckElement = 111; //todo true
+            }
             if (arrLengthCountA + arrLengthCountZ > arrLength) {
+                if (arrSumElementA == arrSumElementZ){
+                    return isCheckElement = 11111; //todo true
+                }
                 return isCheckElement;
             }
             //––––––––––––––––––––––––––––––
-            if (arrSumElementA == arrSumElementZ && arrLengthCount == 0) {
-                return true;
-            }
-            if (arrSumElementA == arrSumElementZ && arrLengthCount == 1) {
-                return false;
-            }
-            for (; arrSumElementA == arrSumElementZ && arrLengthCount > 1; ) {
-//                isCheckElement = true;
+            //1 1 1 0
+            //возвращает труе
+            //т.к. последняя итерация к левой и правой сумме прибавляет одно среднее число
+            for (; arrSumElementA == arrSumElementZ && arrLengthCount >= 1; ) {
+                if (arrLengthCount == 1){
+                    isCheckElement = 555; //todo в этом случае нужна ещё дороботка
+                    break;
+                }
+                isCheckElement = 222; //todo true
                 arrLengthCount--;
                 arrLengthCount--;
                 arrLengthCountA++;
@@ -97,24 +107,24 @@ public class arrCheckBalance {
             }
             //––––––––––––––––––––––––––––––
             for (; arrSumElementA < arrSumElementZ && arrLengthCount >= 1; ) {
-                isCheckElement = false;
+                isCheckElement = 333; //todo false
                 arrLengthCount--;
                 iA++;
                 arrSumElementA += arrayRandom[iA];
                 arrLengthCountA++;
                 if (arrLengthCountA + arrLengthCountZ >= arrLength) {
-                    return isCheckElement;
+                    break;
                 }
             }
             //––––––––––––––––––––––––––––––
             for (; arrSumElementA > arrSumElementZ && arrLengthCount >= 1; ) {
-                isCheckElement = false;
+                isCheckElement = 444; //todo false
                 arrLengthCount--;
                 iZ--;
                 arrSumElementZ += arrayRandom[iZ];
                 arrLengthCountZ++;
                 if (arrLengthCountA + arrLengthCountZ >= arrLength) {
-                    return isCheckElement;
+                    break;
                 }
             }
         }
