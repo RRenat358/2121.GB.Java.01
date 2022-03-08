@@ -152,7 +152,7 @@ public class Lesson03 {
             if (arrayRandom[iA] < arrayRandom[iZ]) {
                 isCheckElement = false;
                 arrLengthCount--;
-
+//                 TODO сумма а и з
                 if ((iZ + 1) - (iA + 1) <= arrLengthCount) {
                     iA++;
                     continue;
