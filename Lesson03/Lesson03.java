@@ -118,53 +118,88 @@ public class Lesson03 {
         checkBalance([2, 2, 2, 1, 2, 2, ||| 10, 1]) → true, т.е. 2 + 2 + 2 + 1 + 2 + 2 = 10 + 1
         checkBalance([1, 1, 1, ||| 2, 1]) → true, т.е. 1 + 1 + 1 = 2 + 1.
         (граница показана символами |||, эти символы в массив не входят и не имеют никакого отношения к ИЛИ)*/
-        boolean isBalance = arrCheckBalance(arrayRandom, arrLength);
-
         System.out.println(arrRandomToString);
+
+        boolean isBalance = arrCheckBalance(arrayRandom, arrLength);
         System.out.println(isBalance);
 
         //======================================================================
         System.out.println("––––––––––––––––––––––––––––––");
     }
 
+    //Ложные срабатывания
+    //true вместо false
+    //==false
+    //0, 1, 2, 1
+    //0, 1, 0, 0//
+    //2, 1, 2, 0
+    //2, 1, 1, 1
+    //1, 2, 0, 1
+    //0, 1, 1, 1
+
+    //2, 0, 0, 2
     private static boolean arrCheckBalance(int[] arrayRandom, int arrLength) {
         int arrLengthCount = arrLength;
-        boolean isCheckElement = false;
+        int arrLengthCountA = 1;
+        int arrLengthCountZ = 1;
+//        arrayRandom = new int[]{2, 0, 0, 2};
+//        System.out.println("0, 1, 1, 1");
+
+        boolean isCheckElement = true;
 
         int iA = 0;
         int iZ = arrLength - 1;
-        for (; true /*iA < arrLength*/; ) {
-            //––––––––––––––––––––––––––––––
-            if (arrayRandom[iA] == arrayRandom[iZ]) {
-                isCheckElement = true;
-                arrLengthCount--;
-                arrLengthCount--;
+        int arrSumElementA = arrayRandom[iA];
+        int arrSumElementZ = arrayRandom[iZ];
 
-                if ((iZ + 1) - (iA + 1) <= arrLengthCount) {
-                    iA++;
-                    iZ++;
-                    continue;
-                } else {
+        for (; arrLengthCount >= 0; ) {
+            if (arrLengthCountA + arrLengthCountZ > arrLength) {
+                return isCheckElement;
+            }
+            //––––––––––––––––––––––––––––––
+            if (arrSumElementA == arrSumElementZ && arrLengthCount == 0) {
+                return true;
+            }
+            if (arrSumElementA == arrSumElementZ && arrLengthCount == 1) {
+                return false;
+            }
+            for (; arrSumElementA == arrSumElementZ && arrLengthCount > 1; ) {
+//                isCheckElement = true;
+                arrLengthCount--;
+                arrLengthCount--;
+                arrLengthCountA++;
+                arrLengthCountZ++;
+                iA++;
+                iZ--;
+                arrSumElementA += arrayRandom[iA];
+                arrSumElementZ += arrayRandom[iZ];
+                if (arrLengthCountA + arrLengthCountZ >= arrLength) {
                     break;
                 }
             }
             //––––––––––––––––––––––––––––––
-            if (arrayRandom[iA] < arrayRandom[iZ]) {
+            for (; arrSumElementA < arrSumElementZ && arrLengthCount >= 1; ) {
                 isCheckElement = false;
                 arrLengthCount--;
-//                 TODO сумма а и з
-                if ((iZ + 1) - (iA + 1) <= arrLengthCount) {
-                    iA++;
-                    continue;
-                } else {
-                    break;
+                iA++;
+                arrSumElementA += arrayRandom[iA];
+                arrLengthCountA++;
+                if (arrLengthCountA + arrLengthCountZ >= arrLength) {
+                    return isCheckElement;
                 }
             }
             //––––––––––––––––––––––––––––––
-
+            for (; arrSumElementA > arrSumElementZ && arrLengthCount >= 1; ) {
+                isCheckElement = false;
+                arrLengthCount--;
+                iZ--;
+                arrSumElementZ += arrayRandom[iZ];
+                arrLengthCountZ++;
+                if (arrLengthCountA + arrLengthCountZ >= arrLength) {
+                    return isCheckElement;
+                }
+            }
         }
-
-
         return isCheckElement;
     }
 
