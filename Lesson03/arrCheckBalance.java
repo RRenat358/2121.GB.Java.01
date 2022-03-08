@@ -5,7 +5,7 @@ import java.util.Random;
 public class arrCheckBalance {
     public static void main(String[] args) {
         //Ввод данных здесь
-        int arrLength = 5;
+        int arrLength = 4;
         int arrRandomDelta = 3;
 
         System.out.println("––– РандомМассив –––––––––––––––––––––––––––");
@@ -37,8 +37,8 @@ public class arrCheckBalance {
     }
 
     //Ложные срабатывания
-    //true вместо false
-    //==false
+
+    //должно быть ==false
     //0, 1, 2, 1
     //0, 1, 0, 0//
     //2, 1, 2, 0
@@ -48,11 +48,12 @@ public class arrCheckBalance {
 
     //2, 0, 0, 2 ok
 
-    //==true
-    //1 0 1 0
-    //1 1 0 0
-    //0 1 1 2
-    //0 1 0 1
+    //должно быть ===true
+    //1, 0, 1, 0
+    //0, 1, 0, 1
+    //1, 1, 0, 0
+    //0, 1, 1, 2
+    //1, 1, 2, 0
 
 
     private static boolean arrCheckBalance(int[] arrayRandom, int arrLength) {
