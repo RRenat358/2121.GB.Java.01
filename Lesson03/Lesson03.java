@@ -5,8 +5,8 @@ import java.util.Random;
 public class Lesson03 {
     public static void main(String[] args) {
         //Ввод данных здесь
-        int arrLength = 15;
-        int arrRandomDelta = 12;
+        int arrLength = 4;
+        int arrRandomDelta = 3;
 
         System.out.println("––– РандомМассив –––––––––––––––––––––––––––");
         int[] arrayRandom = new int[arrLength];
@@ -89,9 +89,9 @@ public class Lesson03 {
         arr02(len, initialValue);
         System.out.println();
         System.out.println();
-        
+
         //======================================================================
-        System.out.println("––– 06 –––––––––––––––––––––––––––");
+        System.out.println("––– 06 * –––––––––––––––––––––––––––");
         System.out.println("Найти в массиве Минимальное и Максимальное число");
         int arrMinElement;
         int arrMaxElement = 0;
@@ -110,10 +110,64 @@ public class Lesson03 {
         System.out.printf("Минимальное == %s \nМаксимальное == %s \n", arrMinElement, arrMaxElement);
         System.out.println();
 
+        //======================================================================
+        System.out.println("––– 07 ** –––––––––––––––––––––––––––");
+        System.out.println("true is balance in array");
+        /*      7. ** Написать метод, в который передается не пустой одномерный целочисленный массив.
+        Метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части массива равны.
+        checkBalance([2, 2, 2, 1, 2, 2, ||| 10, 1]) → true, т.е. 2 + 2 + 2 + 1 + 2 + 2 = 10 + 1
+        checkBalance([1, 1, 1, ||| 2, 1]) → true, т.е. 1 + 1 + 1 = 2 + 1.
+        (граница показана символами |||, эти символы в массив не входят и не имеют никакого отношения к ИЛИ)*/
+        boolean isBalance = arrCheckBalance(arrayRandom, arrLength);
 
+        System.out.println(arrRandomToString);
+        System.out.println(isBalance);
 
+        //======================================================================
         System.out.println("––––––––––––––––––––––––––––––");
     }
+
+    private static boolean arrCheckBalance(int[] arrayRandom, int arrLength) {
+        int arrLengthCount = arrLength;
+        boolean isCheckElement = false;
+
+        int iA = 0;
+        int iZ = arrLength - 1;
+        for (; true /*iA < arrLength*/; ) {
+            //––––––––––––––––––––––––––––––
+            if (arrayRandom[iA] == arrayRandom[iZ]) {
+                isCheckElement = true;
+                arrLengthCount--;
+                arrLengthCount--;
+
+                if ((iZ + 1) - (iA + 1) <= arrLengthCount) {
+                    iA++;
+                    iZ++;
+                    continue;
+                } else {
+                    break;
+                }
+            }
+            //––––––––––––––––––––––––––––––
+            if (arrayRandom[iA] < arrayRandom[iZ]) {
+                isCheckElement = false;
+                arrLengthCount--;
+
+                if ((iZ + 1) - (iA + 1) <= arrLengthCount) {
+                    iA++;
+                    continue;
+                } else {
+                    break;
+                }
+            }
+            //––––––––––––––––––––––––––––––
+
+        }
+
+
+        return isCheckElement;
+    }
+
     //======================================================================
     public static void arr02(int len, int initialValue) {
         int[] arr = new int[len];
