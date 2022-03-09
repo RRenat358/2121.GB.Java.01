@@ -5,8 +5,8 @@ import java.util.Random;
 public class Lesson03 {
     public static void main(String[] args) {
         //Ввод данных здесь
-        int arrLength = 4;
-        int arrRandomDelta = 3;
+        int arrLength = 13;
+        int arrRandomDelta = 10;
 
         System.out.println("––– РандомМассив –––––––––––––––––––––––––––");
         int[] arrayRandom = new int[arrLength];
@@ -112,7 +112,7 @@ public class Lesson03 {
 
         //======================================================================
         System.out.println("––– 07 ** –––––––––––––––––––––––––––");
-        System.out.println("in == arrCheckBalance.java");
+        System.out.println("Lesson03/arrCheckBalance02.java");
     }
 
     //======================================================================

@@ -25,22 +25,21 @@ public class arrCheckBalance02 {
         checkBalance([1, 1, 1, ||| 2, 1]) → true, т.е. 1 + 1 + 1 = 2 + 1.
         (граница показана символами |||, эти символы в массив не входят и не имеют никакого отношения к ИЛИ)*/
         System.out.println(arrRandomToString);
-        int isBalance = arrCheckBalance(arrayRandom, arrLength);
+        boolean isBalance = arrCheckBalance(arrayRandom, arrLength);
         System.out.println(isBalance);
         System.out.println("––––––––––––––––––––––––––––––");
     }
     //======================================================================
-    private static int arrCheckBalance(int[] arrayRandom, int arrLength) {
-        int isCheckElement = 0;
+    private static boolean arrCheckBalance(int[] arrayRandom, int arrLength) {
+        boolean isCheckElement = false;
         int iA = 0;
         int iZ = arrLength - 1;
         int arrSumElementA = arrayRandom[iA];
         int arrSumElementZ = arrayRandom[iZ];
         arrLength -= 2;
-
-        for (; arrLength > 1; ) {
+        //––––––––––––––––––––––––––––––
+        while (arrLength > 1) {
             for (; arrSumElementA == arrSumElementZ && arrLength > 1; ) {
-                isCheckElement = 11; //todo true
                 arrLength--;
                 arrLength--;
                 iA++;
@@ -49,37 +48,31 @@ public class arrCheckBalance02 {
                 arrSumElementZ += arrayRandom[iZ];
             }
             for (; arrSumElementA < arrSumElementZ && arrLength > 1; ) {
-                isCheckElement = 22; //todo false
                 arrLength--;
                 iA++;
                 arrSumElementA += arrayRandom[iA];
             }
             for (; arrSumElementA > arrSumElementZ && arrLength > 1; ) {
-                isCheckElement = 33; //todo false
                 arrLength--;
                 iZ--;
                 arrSumElementZ += arrayRandom[iZ];
             }
         }
         //––––––––––––––––––––––––––––––
-        for (; arrLength == 1; ) {
+        while (arrLength == 1) {
             if ( arrSumElementA == arrSumElementZ ) {
-                isCheckElement = 111; //todo ???
                 arrLength--;
                 iA++;
-                arrSumElementA += arrayRandom[iA];
+                arrSumElementA += arrayRandom[iA]; //последний элемент можно суммировать с Любой суммой
                 break;
             }
-
             if ( arrSumElementA < arrSumElementZ ) {
-                isCheckElement = 222; //todo ???
                 arrLength--;
                 iA++;
                 arrSumElementA += arrayRandom[iA];
                 break;
             }
             if ( arrSumElementA > arrSumElementZ  ) {
-                isCheckElement = 333; //todo ???
                 arrLength--;
                 iZ--;
                 arrSumElementZ += arrayRandom[iZ];
@@ -87,18 +80,17 @@ public class arrCheckBalance02 {
             }
         }
         //––––––––––––––––––––––––––––––
-        for (; arrLength == 0; ) {
+        while (arrLength < 1) {
             if ( arrSumElementA == arrSumElementZ ) {
-                isCheckElement = 1111; //todo true
+                isCheckElement = true;
                 break;
-                //0 1 0 0
             }
             if ( arrSumElementA < arrSumElementZ) {
-                isCheckElement = 2222; //todo false
+                isCheckElement = false;
                 break;
             }
             if ( arrSumElementA > arrSumElementZ ) {
-                isCheckElement = 3333; //todo false
+                isCheckElement = false;
                 break;
             }
         }
