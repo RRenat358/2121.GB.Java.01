@@ -129,7 +129,6 @@ public class arrCheckBalance02 {
                 isCheckElement = 3333; //todo false
             }
         }
-
         return isCheckElement;
     }
 }
