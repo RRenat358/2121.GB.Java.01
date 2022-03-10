@@ -41,15 +41,13 @@ public class ArrShift {
     private static int[] arrShift(int[] arrayRandom, int nShift) {
         int arrLength = arrayRandom.length;
         int temp1 = 0;
-        //todo Нужно передвигать только среднюю часть
-        //При большой длине массива операция будут долгой
-        //Придётся вводить несколько условий
-        //Возможно появятся проблемы с маленькими массивами:
-        // arrLength==nShift +/-1
+
         for (int i = 0; i < nShift; i++) {
             temp1 = arrayRandom[0];
-            //подсказала ИДЕА:
+            //Подсказала ИДЕА:
             //System.arraycopy(arrayRandom, 1, arrayRandom, 0, arrLength - 1);
+            //Почитал про этот метод, работает быстрее чем цикл.
+            //Это мой метод)):
             for (int i2 = 0; i2 < arrLength - 1; i2++) {
                 arrayRandom[i2] = arrayRandom[i2 + 1];
             }
