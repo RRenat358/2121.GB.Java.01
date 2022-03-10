@@ -1,15 +1,16 @@
 package Lesson03;
 
-//import java.lang.reflect.Array;
+
+
 import java.util.Arrays;
 import java.util.Random;
 
 public class ArrShift {
     public static void main(String[] args) {
         //Ввод данных здесь
-        int arrLength = 6;
-        int arrRandomDelta = 3;
-        int nShift = 2;
+        int arrLength = 9;
+        int arrRandomDelta = 99;
+        int nShift = 1;
 
         System.out.println("––– РандомМассив –––––––––––––––––––––––––––");
         int[] arrayRandom = new int[arrLength];
@@ -40,19 +41,18 @@ public class ArrShift {
     private static int[] arrShift(int[] arrayRandom, int nShift) {
         int arrLength = arrayRandom.length;
         int temp1 = 0;
-        int temp2 = 0;
-
-        while (nShift < 2){
-            temp1 = arrayRandom[nShift-1];
-            temp2 = arrayRandom[nShift-1-1];
-            arrayRandom[nShift-1-1] = arrayRandom[nShift-1];
-            nShift--;
+        //todo Нужно передвигать только среднюю часть
+        //При большой длине массива операция будут долгой
+        //Придётся вводить несколько условий
+        //Возможно появятся проблемы с маленькими массивами:
+        // arrLength==nShift +/-1
+        for (int i = 0; i < nShift; i++) {
+            temp1 = arrayRandom[0];
+            for (int i2 = 0; i2 < arrLength - 1; i2++) {
+                arrayRandom[i2] = arrayRandom[i2 + 1];
+            }
+            arrayRandom[arrLength - 1] = temp1;
         }
-
-
-
-
         return arrayRandom;
     }
-
 }
