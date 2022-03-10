@@ -89,7 +89,6 @@ public class Lesson03 {
         arr02(len, initialValue);
         System.out.println();
         System.out.println();
-
         //======================================================================
         System.out.println("––– 06 * –––––––––––––––––––––––––––");
         System.out.println("Найти в массиве Минимальное и Максимальное число");
@@ -109,17 +108,13 @@ public class Lesson03 {
         System.out.println(arrRandomToString);
         System.out.printf("Минимальное == %s \nМаксимальное == %s \n", arrMinElement, arrMaxElement);
         System.out.println();
-
         //======================================================================
         System.out.println("––– 07 ** –––––––––––––––––––––––––––");
         System.out.println("Lesson03/arrCheckBalance02.java");
         //======================================================================
         System.out.println("––– 08 *** –––––––––––––––––––––––––––");
         System.out.println("Lesson03/ArrShift.java");
-
-
     }
-
     //======================================================================
     public static void arr02(int len, int initialValue) {
         int[] arr = new int[len];
