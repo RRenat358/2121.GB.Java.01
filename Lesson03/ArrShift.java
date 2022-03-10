@@ -1,7 +1,5 @@
 package Lesson03;
 
-
-
 import java.util.Arrays;
 import java.util.Random;
 

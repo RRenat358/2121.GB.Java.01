@@ -115,7 +115,7 @@ public class Lesson03 {
         System.out.println("Lesson03/arrCheckBalance02.java");
         //======================================================================
         System.out.println("––– 08 *** –––––––––––––––––––––––––––");
-        System.out.println("Lesson03/arrShift.java");
+        System.out.println("Lesson03/ArrShift.java");
 
 
     }
