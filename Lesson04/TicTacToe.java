@@ -1,6 +1,6 @@
 package Lesson04;
 
-public class Lesson04 {
+public class TicTacToe {
     public static void main(String[] args) {
         //======================================================================
         int arrLength = 3;
@@ -20,6 +20,7 @@ public class Lesson04 {
         }
         System.out.println();
         //======================================================================
+
 
     }
 }
