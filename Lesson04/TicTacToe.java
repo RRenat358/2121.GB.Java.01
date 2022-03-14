@@ -43,8 +43,6 @@ public class TicTacToe {
     }
 
     //======================================================================
-
-
     public static void arrMap(int arrMapLength) {
         System.out.println();
         for (int i = 0; i < arrMapLength; i++) {
@@ -70,33 +68,42 @@ public class TicTacToe {
         System.out.println();
     }
 
-
     public static void stepHuman() {
         int x, y;
-        do {
+        while (true) {
             System.out.println("Ваш ход!");
             System.out.print("x = ");
-            x = sc.nextInt();
+            x = sc.nextInt() - 1;
             System.out.print("y = ");
-            y = sc.nextInt();
+            y = sc.nextInt() - 1;
             System.out.println("----------");
-        } while (x < 1 || x > arrMapLength || y < 1 || y > arrMapLength);
-        arrMap[x - 1][y - 1] = stepX;
+            if (x < 0 || x > arrMapLength || y < 0 || y > arrMapLength) {
+                continue;
+            }
+            if (arrMap[x][y] == cellNull) {
+                arrMap[x][y] = stepX;
+                return;
+            }
+        }
+
     }
 
     public static void stepComp() {
         int x, y;
-
-        do {
+        while (true) {
             System.out.println("Компьютер ходит:");
-            x = random.nextInt(3) + 1;
-            System.out.println("x = " + x);
-            y = random.nextInt(3) + 1;
-            System.out.println("y = " + y);
+            x = random.nextInt(arrMapLength);
+            System.out.println("x = " + (x + 1));
+            y = random.nextInt(arrMapLength);
+            System.out.println("y = " + (y + 1));
             System.out.println("----------");
-        } while (x < 1 || x > arrMapLength || y < 1 || y > arrMapLength);
-        arrMap[x - 1][y - 1] = stepO; //todo -1 == можно выше в методе не добавлять
+            if (arrMap[x][y] == cellNull) {
+                arrMap[x][y] = stepO;
+                return;
+            }
+        }
     }
+
     public static boolean checkCellNull() {
         for (int i = 0; i < arrMapLength; i++) {
             for (int j = 0; j < arrMapLength; j++) {
@@ -106,6 +113,9 @@ public class TicTacToe {
             }
         }
         return false;
+    }
+    public static void checkWin() {
+
     }
 
 
