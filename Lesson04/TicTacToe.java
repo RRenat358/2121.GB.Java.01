@@ -1,6 +1,7 @@
 package Lesson04;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -21,8 +22,9 @@ public class TicTacToe {
         arrMap(arrMapLength);
         arrMapPrint();
         System.out.println("––––––––––––––––––––––––––––––");
-        stepHuman();
-        System.out.println();
+//        stepHuman();
+//        arrMapPrint();
+        stepComp();
         arrMapPrint();
 
         System.out.println("\n––––––––––––––––––––––––––––––");
@@ -41,6 +43,7 @@ public class TicTacToe {
             }
         }
     }
+
     private static void arrMapPrint() {
         System.out.print("    ");
         for (int i = 0; i < arrMapLength; i++) {
@@ -57,32 +60,33 @@ public class TicTacToe {
         System.out.println();
     }
 
-
-
-/*
-    public static void humanTurn() {
-        int x, y;
-        do {
-            System.out.println("Введите координаты в формате X Y");
-            x = sc.nextInt() - 1;
-            y = sc.nextInt() - 1;
-        } while (!isCellValid(x, y)); // while(isCellValid(x, y) == false)
-        map[y][x] = DOT_X;
-    }
-*/
-
     public static Scanner sc = new Scanner(System.in);
 
     public static void stepHuman() {
         int x, y;
         do {
             System.out.println("Ваш ход!");
-            System.out.print("x = " );
+            System.out.print("x = ");
             x = sc.nextInt();
-            System.out.print("y = " );
+            System.out.print("y = ");
             y = sc.nextInt();
+            System.out.println("----------");
         } while (x < 1 || x > arrMapLength || y < 1 || y > arrMapLength);
-        arrMap[x-1][y-1] = stepX;
+        arrMap[x - 1][y - 1] = stepX;
+    }
+    public static Random random = new Random();
+    public static void stepComp() {
+        int x, y;
+
+        do {
+            System.out.println("Компьютер ходит:");
+            x = random.nextInt(3) + 1;
+            System.out.println("x = " + x);
+            y = random.nextInt(3) + 1;
+            System.out.println("y = " + y);
+            System.out.println("----------");
+        } while (x < 1 || x > arrMapLength || y < 1 || y > arrMapLength);
+        arrMap[x - 1][y - 1] = stepO; //todo -1 == можно выше в методе не добавлять
     }
 
 
