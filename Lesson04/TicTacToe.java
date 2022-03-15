@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class TicTacToe {
     public static Scanner sc = new Scanner(System.in);
     public static Random random = new Random();
-
+    //Ввод данных здесь
     public static int arrMapLength = 3;
+    public static final int whatStepInLineToWin = 3;
+
     static String[][] arrMap = new String[arrMapLength][arrMapLength];
 
     public static final String cellNull = " · ";
@@ -28,7 +30,8 @@ public class TicTacToe {
             arrMapPrint();
 
 //            if (checkWinHumanOrdinateX() || checkWinHumanOrdinateY()) {
-            if (checkWinOrdinateX(stepX) || checkWinOrdinateY(stepX)) {
+            if (checkWinOrdinateX(stepX) || checkWinOrdinateY(stepX) ||
+                    checkWinOrdinateXY(stepX)) {
                 System.out.println("\n––––––––––––––––––––––––––––––");
                 System.out.println("    Вы победили!");
                 break;
@@ -39,7 +42,8 @@ public class TicTacToe {
             System.out.println("––––––––––––––––––––––––––––––");
             stepComp();
             arrMapPrint();
-            if (checkWinComp()) {
+            if (checkWinOrdinateX(stepO) || checkWinOrdinateY(stepO) ||
+                    checkWinOrdinateXY(stepO)) {
                 System.out.println("\n––––––––––––––––––––––––––––––");
                 System.out.println("    Компьютер победил!");
                 break;
@@ -54,7 +58,6 @@ public class TicTacToe {
         System.out.println("    Конец игры");
         System.out.println("––––––––––––––––––––––––––––––");
     }
-
     //======================================================================
     public static void arrMap(int arrMapLength) {
         System.out.println();
@@ -64,7 +67,6 @@ public class TicTacToe {
             }
         }
     }
-
     private static void arrMapPrint() {
         System.out.print("    ");
         for (int i = 0; i < arrMapLength; i++) {
@@ -80,7 +82,6 @@ public class TicTacToe {
         }
         System.out.println();
     }
-
     //======================================================================
     public static void stepHuman() {
         int x, y;
@@ -128,64 +129,6 @@ public class TicTacToe {
         }
         return false;
     }
-
-
-    //======================================================================
- /*   public static boolean checkWinHumanOrdinateX() {
-        int tempWin;
-        for (int x = 0; x < arrMapLength; x++) {
-            tempWin = 0;
-            for (int y = 0; y < arrMapLength; y++) {
-                if (arrMap[x][y] == stepX) {
-                    tempWin++;
-                    if (tempWin == 3) {//todo для 3 -- ввести переменную
-                        return true;
-                    }
-                } else {
-                    tempWin = 0;
-                }
-            }
-        }
-        return false;
-    }
-
-    public static boolean checkWinHumanOrdinateY() {
-        int tempWin;
-        for (int y = 0; y < arrMapLength; y++) {
-            tempWin = 0;
-            for (int x = 0; x < arrMapLength; x++) {
-                if (arrMap[x][y] == stepX) {
-                    tempWin++;
-                    if (tempWin == 3) {//todo для 3 -- ввести переменную
-                        return true;
-                    }
-                } else {
-                    tempWin = 0;
-                }
-            }
-        }
-        return false;
-    }
-
-*/
-    //======================================================================
-    public static boolean checkWinComp() {
-        int tempWin;
-        for (int x = 0; x < arrMapLength; x++) {
-            tempWin = 0;
-            for (int y = 0; y < arrMapLength; y++) {
-                if (arrMap[x][y] == stepO) {
-                    tempWin++;
-                    if (tempWin == 3) {
-                        return true;
-                    }
-                } else {
-                    tempWin = 0;
-                }
-            }
-        }
-        return false;
-    }
     //======================================================================
     public static boolean checkWinOrdinateX(String step) {
         int tempWin;
@@ -194,7 +137,7 @@ public class TicTacToe {
             for (int y = 0; y < arrMapLength; y++) {
                 if (arrMap[x][y] == step) {
                     tempWin++;
-                    if (tempWin == 3) {//todo для 3 -- ввести переменную
+                    if (tempWin == whatStepInLineToWin) {
                         return true;
                     }
                 } else {
@@ -204,7 +147,6 @@ public class TicTacToe {
         }
         return false;
     }
-
     public static boolean checkWinOrdinateY(String step) {
         int checkWin;
         for (int y = 0; y < arrMapLength; y++) {
@@ -212,7 +154,7 @@ public class TicTacToe {
             for (int x = 0; x < arrMapLength; x++) {
                 if (arrMap[x][y] == step) {
                     checkWin++;
-                    if (checkWin == 3) {//todo для 3 -- ввести переменную
+                    if (checkWin == whatStepInLineToWin) {
                         return true;
                     }
                 } else {
@@ -222,7 +164,22 @@ public class TicTacToe {
         }
         return false;
     }
-
+    //======================================================================
+    public static boolean checkWinOrdinateXY(String step) {
+        int checkWin = 0;
+        for (int x = 0, y = 0; x < arrMapLength; x++, y++) {
+//            checkWin = 0;
+            if (arrMap[x][y] == step) {
+                checkWin++;
+                if (checkWin == whatStepInLineToWin) {
+                    return true;
+                }
+            } else {
+                checkWin = 0;
+            }
+        }
+        return false;
+    }
 
 
 }
