@@ -27,9 +27,21 @@ public class TicTacToe {
             System.out.println("––––––––––––––––––––––––––––––");
             stepHuman();
             arrMapPrint();
+            if (checkWinHuman()) {
+                System.out.println("\n––––––––––––––––––––––––––––––");
+                System.out.println("    Вы победили!");
+                System.out.println("––––––––––––––––––––––––––––––");
+            }
+            if (!checkCellNull()) {
+                break;
+            }
             stepComp();
             arrMapPrint();
-
+            if (checkWinComp()) {
+                System.out.println("\n––––––––––––––––––––––––––––––");
+                System.out.println("    Компьютер победил!");
+                System.out.println("––––––––––––––––––––––––––––––");
+            }
             if (!checkCellNull()) {
                 break;
             }
@@ -114,10 +126,38 @@ public class TicTacToe {
         }
         return false;
     }
-    public static void checkWin() {
-
+    public static boolean checkWinHuman() {
+        int tempWin = 0;
+        for (int x = 0; x < arrMapLength; x++) {
+            for (int y = 0; y < arrMapLength; y++) {
+                if (arrMap[x][y] == stepX) {
+                    tempWin++;
+                    if (tempWin == 3) {
+                        return true;
+                    }
+                } else {
+                    tempWin = 0;
+                }
+            }
+        }
+        return false;
     }
-
+    public static boolean checkWinComp() {
+        int tempWin = 0;
+        for (int x = 0; x < arrMapLength; x++) {
+            for (int y = 0; y < arrMapLength; y++) {
+                if (arrMap[x][y] == stepO) {
+                    tempWin++;
+                    if (tempWin == 3) {
+                        return true;
+                    }
+                } else {
+                    tempWin = 0;
+                }
+            }
+        }
+        return false;
+    }
 
 
  /*   public static void isStepValid(x,y) {
