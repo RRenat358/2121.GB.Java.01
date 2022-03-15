@@ -22,7 +22,6 @@ public class TicTacToe {
         arrMap(arrMapLength);
         arrMapPrint();
 
-
         while (true) {
             System.out.println("––––––––––––––––––––––––––––––");
             stepHuman();
@@ -30,7 +29,7 @@ public class TicTacToe {
             if (checkWinHuman()) {
                 System.out.println("\n––––––––––––––––––––––––––––––");
                 System.out.println("    Вы победили!");
-                System.out.println("––––––––––––––––––––––––––––––");
+                break;
             }
             if (!checkCellNull()) {
                 break;
@@ -40,16 +39,13 @@ public class TicTacToe {
             if (checkWinComp()) {
                 System.out.println("\n––––––––––––––––––––––––––––––");
                 System.out.println("    Компьютер победил!");
-                System.out.println("––––––––––––––––––––––––––––––");
+                break;
             }
             if (!checkCellNull()) {
                 break;
             }
-
         }
-
-        System.out.println();
-        System.out.println("\n––––––––––––––––––––––––––––––");
+        System.out.println("––––––––––––––––––––––––––––––");
         System.out.println("    Конец игры");
         System.out.println("––––––––––––––––––––––––––––––");
     }
@@ -63,7 +59,6 @@ public class TicTacToe {
             }
         }
     }
-
     private static void arrMapPrint() {
         System.out.print("    ");
         for (int i = 0; i < arrMapLength; i++) {
@@ -79,7 +74,6 @@ public class TicTacToe {
         }
         System.out.println();
     }
-
     public static void stepHuman() {
         int x, y;
         while (true) {
@@ -99,7 +93,6 @@ public class TicTacToe {
         }
 
     }
-
     public static void stepComp() {
         int x, y;
         while (true) {
@@ -115,7 +108,6 @@ public class TicTacToe {
             }
         }
     }
-
     public static boolean checkCellNull() {
         for (int i = 0; i < arrMapLength; i++) {
             for (int j = 0; j < arrMapLength; j++) {
@@ -127,8 +119,9 @@ public class TicTacToe {
         return false;
     }
     public static boolean checkWinHuman() {
-        int tempWin = 0;
+        int tempWin;
         for (int x = 0; x < arrMapLength; x++) {
+            tempWin = 0;
             for (int y = 0; y < arrMapLength; y++) {
                 if (arrMap[x][y] == stepX) {
                     tempWin++;
@@ -143,8 +136,9 @@ public class TicTacToe {
         return false;
     }
     public static boolean checkWinComp() {
-        int tempWin = 0;
+        int tempWin;
         for (int x = 0; x < arrMapLength; x++) {
+            tempWin = 0;
             for (int y = 0; y < arrMapLength; y++) {
                 if (arrMap[x][y] == stepO) {
                     tempWin++;
@@ -158,11 +152,4 @@ public class TicTacToe {
         }
         return false;
     }
-
-
- /*   public static void isStepValid(x,y) {
-
-
-    }
-*/
 }
