@@ -28,8 +28,6 @@ public class TicTacToe {
             System.out.println("––––––––––––––––––––––––––––––");
             stepHuman();
             arrMapPrint();
-
-//            if (checkWinHumanOrdinateX() || checkWinHumanOrdinateY()) {
             if (checkWinOrdinateX(stepX) || checkWinOrdinateY(stepX) ||
                     checkWinOrdinateXY(stepX) || checkWinOrdinateYX(stepX)) {
                 System.out.println("\n––––––––––––––––––––––––––––––");
