@@ -35,6 +35,8 @@ public class TicTacToe {
                 break;
             }
             if (!checkCellNull()) {
+                System.out.println("––––––––––––––––––––––––––––––");
+                System.out.println("    Победила дружба!)");
                 break;
             }
             System.out.println("––––––––––––––––––––––––––––––");
@@ -47,10 +49,10 @@ public class TicTacToe {
                 break;
             }
             if (!checkCellNull()) {
+                System.out.println("––––––––––––––––––––––––––––––");
+                System.out.println("    Победила дружба!)");
                 break;
             }
-//            System.out.println("––––––––––––––––––––––––––––––");
-//            System.out.println("    Победила дружба!)");
         }
         System.out.println("––––––––––––––––––––––––––––––");
         System.out.println("    Конец игры");
