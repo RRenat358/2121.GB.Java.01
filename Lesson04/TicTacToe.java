@@ -135,17 +135,18 @@ public class TicTacToe {
 
     //======================================================================
     public static boolean checkWinOrdinateX(String step) {
-        int tempWin;
+        int checkWin;
         for (int x = 0; x < arrMapLength; x++) {
-            tempWin = 0;
+            checkWin = 0;
             for (int y = 0; y < arrMapLength; y++) {
                 if (arrMap[x][y] == step) {
-                    tempWin++;
-                    if (tempWin == whatStepInLineToWin) {
+                    checkWin++;
+                    if (checkWin == whatStepInLineToWin) {
                         return true;
                     }
                 } else {
-                    tempWin = 0;
+                    checkWin = 0;
+
                 }
             }
         }
