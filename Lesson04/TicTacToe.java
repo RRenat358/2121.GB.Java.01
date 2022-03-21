@@ -135,9 +135,8 @@ public class TicTacToe {
 
     //======================================================================
     public static boolean checkWinOrdinateX(String step) {
-        int checkWin;
         for (int x = 0; x < arrMapLength; x++) {
-            checkWin = 0;
+            int checkWin = 0;
             for (int y = 0; y < arrMapLength; y++) {
                 if (arrMap[x][y] == step) {
                     checkWin++;
@@ -154,9 +153,8 @@ public class TicTacToe {
     }
 
     public static boolean checkWinOrdinateY(String step) {
-        int checkWin;
         for (int y = 0; y < arrMapLength; y++) {
-            checkWin = 0;
+            int checkWin = 0;
             for (int x = 0; x < arrMapLength; x++) {
                 if (arrMap[x][y] == step) {
                     checkWin++;
