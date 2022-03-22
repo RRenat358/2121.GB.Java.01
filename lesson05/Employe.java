@@ -17,7 +17,15 @@ public class Employe {
         this.salary = salary;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Employe{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", phoneNamber='" + phoneNamber + '\'' +
+                ", email='" + email + '\'' +
+                ", position='" + position + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }
