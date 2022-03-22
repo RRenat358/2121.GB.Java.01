@@ -8,6 +8,9 @@ public class Employe {
     String position = "-";
     int salary;
 
+    public Employe() {
+    }
+
     public Employe(String name, int age, String phoneNamber, String email, String position, int salary) {
         this.name = name;
         this.age = age;
@@ -17,15 +20,9 @@ public class Employe {
         this.salary = salary;
     }
 
-    @Override
-    public String toString() {
-        return "Employe{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", phoneNamber='" + phoneNamber + '\'' +
-                ", email='" + email + '\'' +
-                ", position='" + position + '\'' +
-                ", salary=" + salary +
-                '}';
+    public String employeToString() {
+        return "name = " + name + ", age = " + age + "\n," +
+                phoneNamber + " | " + email + "\n," +
+                position + " | " + salary + " руб.";
     }
 }
