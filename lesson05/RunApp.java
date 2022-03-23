@@ -13,8 +13,13 @@ public class RunApp {
         persArray[3] = new Employe("Татьяна", 42,"+7 800 555 0004","123@gmail.com","Менеджер №04",50000);
         persArray[4] = new Employe("Татьяна", 25,"+7 800 555 0005","123@gmail.com","Менеджер №05",50000);
 
-        System.out.println();
 
+        System.out.println("––––––––––––––––––––––––––––––");
+        System.out.println(persArray[0].age);
 
+        System.out.println("––––––––––––––––––––––––––––––");
+        System.out.println(employe.employeToString(persArray[0].age));
+
+        System.out.println("––––––––––––––––––––––––––––––");
     }
 }
