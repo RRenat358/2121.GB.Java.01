@@ -20,30 +20,7 @@ public class Employe {
         this.salary = salary;
     }
 
-
     public String employeToString() {
-        return name + ", " + age + ", " + phoneNumber + ", " + email + ", " + position + ", " + salary;
+        return name + ", " + age + ", " + phoneNumber + ", " + email + ", " + position + ", " + salary + "руб.";
     }
-
-    /*
-        public String employeToString2(String name, int age, String phoneNumber, String email, String position, int salary) {
-            return "name = " + name + ", age = " + age + "\n," +
-                    phoneNumber + " | " + email + "\n," +
-                    position + " | " + salary + " руб.";
-        }
-    */
-    public String employeToString2(String name, int age, String phoneNumber, String email, String position, int salary) {
-        return name + ", " + age + ", " + phoneNumber + ", " + email + ", " + position + ", " + salary;
-    }
-
-/*
-    public Employe employeToString3() {
-        System.out.println("name = " + name + ", age = " + age + "\n," +
-                phoneNumber + " | " + email + "\n," +
-                position + " | " + salary + " руб.");
-        return
-    }
-*/
-
-
 }
