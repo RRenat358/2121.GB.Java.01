@@ -1,7 +1,7 @@
 package Lesson06;
 
 public abstract class Animals {
-    private int distanceTraveled = 0;
+/*    private int distanceTraveled = 0;
 
     public Animals(int distanceTraveled) {
         this.distanceTraveled = distanceTraveled;
@@ -13,7 +13,9 @@ public abstract class Animals {
 
     public void setDistanceTraveled(int distanceTraveled) {
         this.distanceTraveled = distanceTraveled;
-    }
+    }*/
 
-    public abstract void Run();
+//    public abstract void Run();
+
+    public abstract void Run(int a);
 }

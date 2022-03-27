@@ -2,12 +2,15 @@ package Lesson06;
 
 public class RunApp {
     public static void main(String[] args) {
-        int distanceTraveled = 150;
+        int distanceTraveled = 130;
 
-        Cat cat = new Cat(distanceTraveled);
-        cat.Run();
+        Cat cat = new Cat();
+
+        System.out.println("––––––––––––––––––––––––––––––");
+        cat.Run(distanceTraveled);
 
 
 
+        System.out.println("––––––––––––––––––––––––––––––");
     }
 }
