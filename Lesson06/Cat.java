@@ -6,13 +6,12 @@ public class Cat extends Animals{
 
     public Cat(int distanceTraveled) {
         super(distanceTraveled);
-//        Cat cat = new Cat(distanceTraveled);
+       Cat cat = new Cat(distanceTraveled);
     }
 
     @Override
     public void Run() {
         System.out.println("Cat run = " + CatDistanceTraveled);
-
 
     }
 }
