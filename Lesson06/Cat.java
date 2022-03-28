@@ -1,6 +1,7 @@
 package Lesson06;
 
 public class Cat extends Animals {
+    //Ввод максимальных дистанций
     private int RunMax = 100;
     private int SwimMax = 0;
 

@@ -1,6 +1,7 @@
 package Lesson06;
 
 public class Dog extends Animals {
+    //Ввод максимальных дистанций
     private int RunMax = 300;
     private int SwimMax = 100;
 
@@ -33,7 +34,7 @@ public class Dog extends Animals {
         if (SwimMax >= a) {
             System.out.println("Dog swim = " + a);
         } else {
-            System.out.println("Dog swim maximum = " + RunMax);
+            System.out.println("Dog swim maximum = " + SwimMax);
         }
     }
 
