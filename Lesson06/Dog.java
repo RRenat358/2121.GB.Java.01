@@ -1,8 +1,8 @@
 package Lesson06;
 
-public class Cat extends Animals {
-    private int RunMax = 100;
-    private int SwimMax = 0;
+public class Dog extends Animals {
+    private int RunMax = 300;
+    private int SwimMax = 100;
 
 /*
 
@@ -23,19 +23,19 @@ public class Cat extends Animals {
     @Override
     public void Run(int a) {
         if (RunMax >= a) {
-            System.out.println("Cat run = " + a);
+            System.out.println("Dog run = " + a);
         } else {
-            System.out.println("Cat run maximum = " + RunMax);
+            System.out.println("Dog run maximum = " + RunMax);
         }
     }
-
     @Override
     public void Swim(int a) {
         if (SwimMax >= a) {
-            System.out.println("Cat swim = " + a);
+            System.out.println("Dog swim = " + a);
         } else {
-            System.out.println("Cat swim maximum = " + SwimMax);
+            System.out.println("Dog swim maximum = " + RunMax);
         }
     }
+
 
 }

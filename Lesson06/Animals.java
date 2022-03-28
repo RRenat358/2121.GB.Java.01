@@ -18,4 +18,5 @@ public abstract class Animals {
 //    public abstract void Run();
 
     public abstract void Run(int a);
+    public abstract void Swim(int a);
 }
