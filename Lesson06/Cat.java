@@ -2,49 +2,58 @@ package Lesson06;
 
 public class Cat extends Animals {
     //Ввод максимальных дистанций
-    private int RunMax = 100;
-    private int SwimMax = 0;
-//    private int a = 0;
+    private int runMax = 100;
+    private int swimMax = 0;
 
-/*
-
-    public Cat(int distanceTraveled) {
-        super(distanceTraveled);
-//        System.out.println("Cat run = " + distanceTraveled);
+    public Cat() {
     }
 
-    public int getCatDistanceMax() {
-        return CatDistanceMax;
+    public Cat(int runMax, int swimMax) {
+        this.runMax = runMax;
+        this.swimMax = swimMax;
     }
 
-    public void setCatDistanceMax(int catDistanceMax) {
-        CatDistanceMax = catDistanceMax;
-    }
-*/
-/*
-    public int getA() {
-        return a;
+    public int getRunMax() {
+        return runMax;
     }
 
-    public void setA(int a) {
-        this.a = a;
-    }*/
+    public void setRunMax(int runMax) {
+        this.runMax = runMax;
+        if (runMax < 0) {
+            this.runMax = 0;
+        }
+    }
 
+    public int getSwimMax() {
+        return swimMax;
+    }
+
+    public void setSwimMax(int swimMax) {
+        this.swimMax = swimMax;
+        if (swimMax < 0) {
+            this.swimMax = 0;
+        }
+    }
+//    Animals.setAnimalCount(int animalCount) {
+//
+//    }
+    //======================================================================
     @Override
     public void Run(int a) {
-        if (RunMax >= a) {
+        if (runMax >= a) {
             System.out.println("Cat run = " + a);
         } else {
-            System.out.println("Cat run maximum = " + RunMax);
+            System.out.println("Cat run maximum = " + runMax);
         }
     }
 
     @Override
     public void Swim(int a) {
-        if (SwimMax >= a) {
+        //На случай, если какой-нибудь из экземпляров Cat всё же захочет)) проплыть
+        if (swimMax > a) {
             System.out.println("Cat swim = " + a);
         } else {
-            System.out.println("Cat swim maximum = " + SwimMax);
+            System.out.println("Cat swim maximum = " + swimMax);
         }
     }
 

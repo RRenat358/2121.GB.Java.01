@@ -1,22 +1,16 @@
 package Lesson06;
 
 public abstract class Animals {
-/*    private int distanceTraveled = 0;
+    protected static int animalCount = 0;
 
-    public Animals(int distanceTraveled) {
-        this.distanceTraveled = distanceTraveled;
+    public static int getAnimalCount() {
+        return animalCount;
     }
 
-    public int getDistanceTraveled() {
-        return distanceTraveled;
+    public static void setAnimalCount(int animalCount) {
+        Animals.animalCount = animalCount;
     }
-
-    public void setDistanceTraveled(int distanceTraveled) {
-        this.distanceTraveled = distanceTraveled;
-    }*/
-
-//    public abstract void Run();
-
+    //======================================================================
     public abstract void Run(int a);
     public abstract void Swim(int a);
 }
