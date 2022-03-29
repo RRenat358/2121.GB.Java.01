@@ -6,6 +6,7 @@ public class Cat extends Animals {
     private int swimMax = 0;
 
     public Cat() {
+        animalCount++;
     }
 
     public Cat(int runMax, int swimMax) {
@@ -34,9 +35,7 @@ public class Cat extends Animals {
             this.swimMax = 0;
         }
     }
-//    Animals.setAnimalCount(int animalCount) {
-//
-//    }
+
     //======================================================================
     @Override
     public void Run(int a) {

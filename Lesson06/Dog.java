@@ -6,6 +6,7 @@ public class Dog extends Animals {
     private int swimMax = 100;
 
     public Dog() {
+        animalCount++;
     }
 
     public Dog(int runMax, int swimMax) {
@@ -44,6 +45,7 @@ public class Dog extends Animals {
             System.out.println("Dog run maximum = " + runMax);
         }
     }
+
     @Override
     public void Swim(int a) {
         if (swimMax >= a) {

@@ -5,15 +5,9 @@ public class RunApp06 {
         //Ввод дистанций
         int distanceRun = 130;
         int distanceSwim = 80;
-//        int CatRunMax = 100;
-
-
 
         Cat cat = new Cat();
         Dog dog = new Dog();
-//        NoAnimal  = new NoAnimal();
-
-
 
         System.out.println("––––––––––––––––––––––––––––––");
         cat.Run(distanceRun);
@@ -24,12 +18,8 @@ public class RunApp06 {
         dog.Swim(distanceSwim);
 
         System.out.println("––––––––––––––––––––––––––––––");
-
-
+        System.out.println("В соревнованиях участвовало: " + Animals.animalCount + " животных.");
 
         System.out.println("––––––––––––––––––––––––––––––");
     }
-
-
-
 }
