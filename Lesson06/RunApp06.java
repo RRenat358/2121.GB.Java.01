@@ -18,7 +18,7 @@ public class RunApp06 {
         dog.Swim(distanceSwim);
 
         System.out.println("––––––––––––––––––––––––––––––");
-        System.out.println("В соревнованиях участвовало: " + Animals.animalCount + " животных.");
+        System.out.println("В соревнованиях участвовало: " + cat.getAnimalCount() + " животных.");
 
         System.out.println("––––––––––––––––––––––––––––––");
     }

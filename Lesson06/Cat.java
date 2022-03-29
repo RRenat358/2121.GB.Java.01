@@ -1,12 +1,11 @@
 package Lesson06;
 
-public class Cat extends Animals {
+public class Cat extends Animal {
     //Ввод максимальных дистанций
     private int runMax = 100;
     private int swimMax = 0;
 
     public Cat() {
-        animalCount++;
     }
 
     public Cat(int runMax, int swimMax) {
