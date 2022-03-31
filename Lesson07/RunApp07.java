@@ -14,7 +14,13 @@ public class RunApp07 {
 
         System.out.println("––––––––––––––––––––––––––––––");
 //        System.out.println(bowl.getFoodAmount());
-        cat1.eating(bowl.getFoodAmount());
+//        cat1.eating(bowl.getFoodAmount());
+
+//        int a;
+//        a = cat1.eating();
+        int b;
+        b = bowl.getFoodAmount() - cat1.getAppetit();
+
 
 
         System.out.println("––––––––––––––––––––––––––––––");
@@ -22,7 +28,8 @@ public class RunApp07 {
 //        dog.Swim(distanceSwim);
 
         System.out.println("––––––––––––––––––––––––––––––");
-        System.out.printf(" %s съел -- %s \n В миске осталось -- %s \n", cat1.getName(),cat1.getAppetit(),bowl.getFoodAmount());
+//        System.out.printf(" %s съел -- %s \n В миске осталось -- %s \n", cat1.getName(), cat1.getAppetit(), bowl.getFoodAmount());
+        System.out.printf(" %s съел -- %s \n В миске осталось -- %s \n", cat1.getName(), cat1.getAppetit(), b);
 
         System.out.println("––––––––––––––––––––––––––––––");
     }

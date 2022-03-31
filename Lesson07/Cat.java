@@ -30,7 +30,7 @@ public class Cat {
 
     //======================================================================
     public int eating(int a) {
-        a -= appetit;
+        a -= getAppetit();
         return a;
     }
 
