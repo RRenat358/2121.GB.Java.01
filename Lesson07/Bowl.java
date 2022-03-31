@@ -19,19 +19,11 @@ public class Bowl {
             this.foodAmount = foodAmount;
         } else this.foodAmount = 0;
     }
-//    public void changeFoodAmount(int appetit) {
-//        foodAmount -= appetit;
-//    }
 
-        public void changeFoodAmount(int eating) {
-            if (this.foodAmount >= eating) {
-                this.foodAmount = eating;
-//                Cat isCatHappy;
-//                Cat setCatHappy = false;
-//                Cat cat.catHappy = false;
-//                Cat setCatHappy();
-//                Cat setCatHappy(false);
-            } else this.foodAmount = 0;
-        }
+    public void changeFoodAmount(int eating) {
+        if (this.foodAmount >= eating) {
+            this.foodAmount = eating;
+        } else this.foodAmount = 0;
+    }
 
 }
