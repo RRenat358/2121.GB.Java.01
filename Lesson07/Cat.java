@@ -29,9 +29,8 @@ public class Cat {
     }
 
     //======================================================================
-    public int eating(int a) {
-        a -= getAppetit();
-        return a;
+    public void eating(Bowl nFoot) {
+        nFoot.changeFoodAmount(getAppetit());
     }
 
 

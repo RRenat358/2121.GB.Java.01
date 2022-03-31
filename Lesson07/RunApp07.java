@@ -2,7 +2,7 @@ package Lesson07;
 
 public class RunApp07 {
     public static void main(String[] args) {
-        //Ввод дистанций
+        //Ввод количества еды в миске
         int foodAmountR = 130;
 
 
@@ -16,17 +16,26 @@ public class RunApp07 {
 //        System.out.println(bowl.getFoodAmount());
 //        cat1.eating(bowl.getFoodAmount());
 
-        int a;
-        a = cat1.eating(foodAmountR);
-        System.out.println(a);
+//        int a1;
+//        a1 = cat1.eating(foodAmountR);
+//        System.out.println(a1);
 
-        int b;
-        b = bowl.getFoodAmount() - cat1.getAppetit();
+//        int a2;
+//        a2 = bowl.getFoodAmount() - cat1.getAppetit();
+//        System.out.println(a2);
 
-        System.out.println(b);
+
+        int a3;
+        cat1.eating(bowl);
+//        System.out.println(cat1.eating(bowl));
+//        bowl.getFoodAmount() = a3;
+//        bowl.foodAmount = a3;
 
         System.out.println("––––––––––––––––––––––––––––––");
         System.out.println(bowl.getFoodAmount());
+        cat1.eating(bowl);
+        System.out.println(bowl.getFoodAmount());
+//        System.out.println(bowl.changeFoodAmount(foodAmountR));
 
 
         System.out.println("––––––––––––––––––––––––––––––");
