@@ -48,7 +48,7 @@ public class Cat {
 //    }
 
     public void eating2(Bowl bowl) {
-        if (bowl.getFoodAmount() == getAppetit()) {
+        if (bowl.getFoodAmount() == getAppetit() && bowl.getFoodAmount() != 0) {
             bowl.changeFoodAmount(bowl.getFoodAmount() - getAppetit());
             setCatHappyScale(100);
         }
@@ -56,7 +56,11 @@ public class Cat {
             bowl.changeFoodAmount(bowl.getFoodAmount() - getAppetit());
             setCatHappyScale(50);
         }
+        if (bowl.getFoodAmount() == 0) {
+            setCatHappyScale(0);
+        }
 
+        //todo процент сытости
         switch (getCatHappyScale()) {
             case (0):
                 catHappy = "голодный";
@@ -67,7 +71,7 @@ public class Cat {
         }
     }
 
-    //todo процент сытости
+
     public void eating21() {
         switch (getCatHappyScale()) {
             case (0):

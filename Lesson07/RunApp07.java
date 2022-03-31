@@ -3,10 +3,10 @@ package Lesson07;
 public class RunApp07 {
     public static void main(String[] args) {
         //Ввод количества еды в миске
-        int foodAmount = 0;
+        int foodAmount = 70;
 
 
-        Cat cat1 = new Cat("Мурзик", 10);
+        Cat cat1 = new Cat("Мурзик", 20);
 //        Cat cat2 = new Cat();
 //        Cat cat3 = new Cat();
 
@@ -62,14 +62,13 @@ public class RunApp07 {
         }*/
 
 //        for (;cat1.getCatHappyScale()<100;){
-        System.out.print(cat1.getName() + " ест:" );
-
-        while (true){
-            if (cat1.getCatHappyScale()<100){
+        System.out.print(cat1.getName() + " ест:");
+        while (true) {
+            if (cat1.getCatHappyScale() < 100) {
                 cat1.eating2(bowl);
-                System.out.print( " → " + bowl.getFoodAmount());
+                System.out.print(" → " + bowl.getFoodAmount());
             }
-            if (cat1.getCatHappyScale()==100){
+            if (cat1.getCatHappyScale() == 100 || cat1.getCatHappyScale() == 0) {
                 break;
             }
         }
