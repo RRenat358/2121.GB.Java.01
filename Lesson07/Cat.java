@@ -27,4 +27,12 @@ public class Cat {
     public void setAppetit(int appetit) {
         this.appetit = appetit;
     }
+
+    //======================================================================
+    public int eating(int a) {
+        a -= appetit;
+        return a;
+    }
+
+
 }

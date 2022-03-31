@@ -3,22 +3,26 @@ package Lesson07;
 public class RunApp07 {
     public static void main(String[] args) {
         //Ввод дистанций
-        int distanceRun = 130;
-        int distanceSwim = 80;
+        int foodAmountR = 130;
 
-        Cat cat = new Cat();
-        Dog dog = new Dog();
 
-        System.out.println("––––––––––––––––––––––––––––––");
-        cat.Run(distanceRun);
-        dog.Run(distanceRun);
+        Cat cat1 = new Cat("Мурзик", 10);
+//        Cat cat2 = new Cat();
+//        Cat cat3 = new Cat();
 
-        System.out.println("––––––––––––––––––––––––––––––");
-        cat.Swim(distanceSwim);
-        dog.Swim(distanceSwim);
+        Bowl bowl = new Bowl(foodAmountR);
 
         System.out.println("––––––––––––––––––––––––––––––");
-        System.out.println("В соревнованиях участвовало: " + cat.getAnimalCount() + " животных.");
+//        System.out.println(bowl.getFoodAmount());
+        cat1.eating(bowl.getFoodAmount());
+
+
+        System.out.println("––––––––––––––––––––––––––––––");
+//        cat.Swim(distanceSwim);
+//        dog.Swim(distanceSwim);
+
+        System.out.println("––––––––––––––––––––––––––––––");
+        System.out.printf(" %s съел -- %s \n В миске осталось -- %s \n", cat1.getName(),cat1.getAppetit(),bowl.getFoodAmount());
 
         System.out.println("––––––––––––––––––––––––––––––");
     }

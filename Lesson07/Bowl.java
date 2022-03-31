@@ -17,4 +17,7 @@ public class Bowl {
     public void setFoodAmount(int foodAmount) {
         this.foodAmount = foodAmount;
     }
+    public void setFoodAmount() {
+        this.foodAmount = foodAmount;
+    }
 }
