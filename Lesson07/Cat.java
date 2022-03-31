@@ -49,19 +49,33 @@ public class Cat {
 
     public void eating2(Bowl bowl) {
         if (bowl.getFoodAmount() == getAppetit()) {
+            bowl.changeFoodAmount(bowl.getFoodAmount() - getAppetit());
             setCatHappyScale(100);
         }
         if (bowl.getFoodAmount() > getAppetit()) {
             bowl.changeFoodAmount(bowl.getFoodAmount() - getAppetit());
             setCatHappyScale(50);
         }
+
+        switch (getCatHappyScale()) {
+            case (0):
+                catHappy = "голодный";
+            case (50):
+                catHappy = "не наелся";
+            case (100):
+                catHappy = "сыт и счастлив";
+        }
     }
 
-    public void eating21(){
-        switch (getCatHappyScale()){
-            case (0) : catHappy = "голодный";
-            case (50) : catHappy = "не наелся";
-            case (100) : catHappy = "сыт и счастлив";
+    //todo процент сытости
+    public void eating21() {
+        switch (getCatHappyScale()) {
+            case (0):
+                catHappy = "голодный";
+            case (50):
+                catHappy = "не наелся";
+            case (100):
+                catHappy = "сыт и счастлив";
         }
     }
 
