@@ -16,20 +16,22 @@ public class RunApp07 {
 //        System.out.println(bowl.getFoodAmount());
 //        cat1.eating(bowl.getFoodAmount());
 
-//        int a;
-//        a = cat1.eating();
+        int a;
+        a = cat1.eating(foodAmountR);
+        System.out.println(a);
+
         int b;
         b = bowl.getFoodAmount() - cat1.getAppetit();
 
-
+        System.out.println(b);
 
         System.out.println("––––––––––––––––––––––––––––––");
-//        cat.Swim(distanceSwim);
-//        dog.Swim(distanceSwim);
+        System.out.println(bowl.getFoodAmount());
+
 
         System.out.println("––––––––––––––––––––––––––––––");
 //        System.out.printf(" %s съел -- %s \n В миске осталось -- %s \n", cat1.getName(), cat1.getAppetit(), bowl.getFoodAmount());
-        System.out.printf(" %s съел -- %s \n В миске осталось -- %s \n", cat1.getName(), cat1.getAppetit(), b);
+//        System.out.printf(" %s съел -- %s \n В миске осталось -- %s \n", cat1.getName(), cat1.getAppetit(), b);
 
         System.out.println("––––––––––––––––––––––––––––––");
     }
