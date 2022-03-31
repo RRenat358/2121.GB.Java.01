@@ -29,9 +29,12 @@ public class Cat {
     }
 
     //======================================================================
-    public void eating(Bowl nFoot) {
-        nFoot.changeFoodAmount(getAppetit());
-    }
+//    public void eating(Bowl nFoot) {
+//        nFoot.changeFoodAmount(getAppetit());
+//    }
 
+    public void eating2(Bowl bowl) {
+        bowl.setFoodAmount(bowl.getFoodAmount() - getAppetit());
+    }
 
 }

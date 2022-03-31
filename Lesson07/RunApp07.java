@@ -24,18 +24,36 @@ public class RunApp07 {
 //        a2 = bowl.getFoodAmount() - cat1.getAppetit();
 //        System.out.println(a2);
 
+//        int a3;
 
-        int a3;
-        cat1.eating(bowl);
 //        System.out.println(cat1.eating(bowl));
 //        bowl.getFoodAmount() = a3;
 //        bowl.foodAmount = a3;
 
+//        cat1.eating(bowl);
+
+
+
+
         System.out.println("––––––––––––––––––––––––––––––");
-        System.out.println(bowl.getFoodAmount());
-        cat1.eating(bowl);
-        System.out.println(bowl.getFoodAmount());
 //        System.out.println(bowl.changeFoodAmount(foodAmountR));
+
+
+//        cat1.eating(bowl);
+//        System.out.println(bowl.getFoodAmount());
+//        cat1.eating(bowl);
+//        System.out.println(bowl.getFoodAmount());
+
+
+        cat1.eating2(bowl);
+        System.out.println(bowl.getFoodAmount());
+        cat1.eating2(bowl);
+        System.out.println(bowl.getFoodAmount());
+        cat1.eating2(bowl);
+        System.out.println(bowl.getFoodAmount());
+
+
+
 
 
         System.out.println("––––––––––––––––––––––––––––––");

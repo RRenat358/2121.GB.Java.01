@@ -19,6 +19,5 @@ public class Bowl {
     }
     public void changeFoodAmount(int appetit) {
         foodAmount -= appetit;
-
     }
 }
