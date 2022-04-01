@@ -30,13 +30,6 @@ public class Bowl {
     }
 
     //======================================================================
-    public void changeFoodAmount(int eating) {
-        if (this.foodAmount >= eating) {
-            this.foodAmount = eating;
-        } else this.foodAmount = 0;
-    }
-
-
     public void decrementFoodAmount(int eating) {
         if (this.foodAmount >= eating) {
             this.foodAmount -= eating;

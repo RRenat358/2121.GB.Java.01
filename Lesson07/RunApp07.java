@@ -3,9 +3,14 @@ package Lesson07;
 public class RunApp07 {
     public static void main(String[] args) {
         //Ввод количества еды в миске
-        int foodAmount = 100;
+        int foodAmount = 20;
 
-        Cat cat1 = new Cat("Мурзик", 20);
+
+        Cat[] cat = new Cat[]{
+                new Cat("Мурзик", 10),
+                new Cat("Барсик", 15),
+                new Cat("Персик", 20)
+        };
 
         Bowl bowl = new Bowl(foodAmount);
 
@@ -13,34 +18,16 @@ public class RunApp07 {
         System.out.println(foodAmount + " -- еды в миске");
 
         System.out.println("––––––––––––––––––––––––––––––");
-
-/*        if (foodAmount != 0) {
-            while (true) {
-                if (cat1.getCatHappyScale() < 100) {
-                    cat1.eating2(bowl);
-                    System.out.print(" → " + bowl.getFoodAmount());
-                }
-                if (cat1.getCatHappyScale() == 100 || cat1.getCatHappyScale() == 0) {
-                    break;
-                }
+        if (foodAmount > 0) {
+            for (int i = 0; i < cat.length; i++) {
+                cat[i].eating3(bowl);
+                System.out.print(cat[i].getName() + " съел: " + cat[i].getAppetit() + " --→ в тарелке осталось: " + bowl.getFoodAmount() + " | ");
+                System.out.println(cat[i].getName() + " -- " + cat[i].catHappy);
             }
         } else {
-            System.out.print("Еды в тарелке нет...");
-        }*/
-        if (foodAmount > 0) {
-            cat1.eating3(bowl);
-            System.out.print(cat1.getName() + " съел: " + cat1.getAppetit() + " --→ в тарелке осталось: " + bowl.getFoodAmount());
-        } else {
-            System.out.print("Еды в тарелке нет...");
+            System.out.print(" Еды в тарелке нет...\n Коты голодные");
         }
-
-
-
-
         System.out.println();
-
-        System.out.println("––––––––––––––––––––––––––––––");
-        System.out.println(cat1.getName() + " -- " + cat1.catHappy);
 
         System.out.println("––––––––––––––––––––––––––––––");
     }
