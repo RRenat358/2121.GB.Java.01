@@ -3,7 +3,6 @@ package Lesson07;
 public class Cat {
     String name = "КотНеизвестный";
     int appetit = 0;
-    int catHappyScale = 0;
     String catHappy = " не ел совсем...";
 
     public Cat() {
@@ -30,19 +29,19 @@ public class Cat {
         this.appetit = appetit;
     }
 
-    public int getCatHappyScale() {
-        return catHappyScale;
+    public String getCatHappy() {
+        return catHappy;
     }
 
-    public void setCatHappyScale(int catHappyScale) {
-        this.catHappyScale = catHappyScale;
+    public void setCatHappy(String catHappy) {
+        this.catHappy = catHappy;
     }
 
     //======================================================================
-    public void eating3(Bowl bowl) {
+    public void eatingCat(Bowl bowl) {
         if (bowl.getFoodAmount() != 0) {
             bowl.decrementFoodAmount(this.appetit);
-            if (bowl.foodEnough) {
+            if (bowl.isFoodEnough()) {
                 this.catHappy = " сыт и счастлив";
             } else {
                 catHappy = " поел, но не наелся";

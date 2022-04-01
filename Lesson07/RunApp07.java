@@ -3,7 +3,8 @@ package Lesson07;
 public class RunApp07 {
     public static void main(String[] args) {
         //Ввод количества еды в миске
-        int foodAmount = 20;
+        int foodAmount = 5;
+        int footAdd = 100;
 
 
         Cat[] cat = new Cat[]{
@@ -20,15 +21,17 @@ public class RunApp07 {
         System.out.println("––––––––––––––––––––––––––––––");
         if (foodAmount > 0) {
             for (int i = 0; i < cat.length; i++) {
-                cat[i].eating3(bowl);
+                cat[i].eatingCat(bowl);
                 System.out.print(cat[i].getName() + " съел: " + cat[i].getAppetit() + " --→ в тарелке осталось: " + bowl.getFoodAmount() + " | ");
-                System.out.println(cat[i].getName() + " -- " + cat[i].catHappy);
+                System.out.println(cat[i].getName() + " -- " + cat[i].getCatHappy());
             }
         } else {
             System.out.print(" Еды в тарелке нет...\n Коты голодные");
         }
         System.out.println();
-
+        System.out.println("––––––––––––––––––––––––––––––");
+        bowl.incrementFoodAmount(footAdd);
+        System.out.println("В миску добавили " + footAdd + " еды. Теперь в миске " + bowl.getFoodAmount());
         System.out.println("––––––––––––––––––––––––––––––");
     }
 }

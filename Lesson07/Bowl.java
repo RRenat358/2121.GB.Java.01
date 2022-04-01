@@ -41,7 +41,12 @@ public class Bowl {
     }
 
     public void incrementFoodAmount(int addFood) {
-        this.foodAmount += addFood;
+        if (this.foodAmount <= 0) {
+            this.foodAmount = addFood;
+        } else {
+            this.foodAmount += addFood;
+        }
+
     }
 
 }
