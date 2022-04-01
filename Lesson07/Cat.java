@@ -1,9 +1,9 @@
 package Lesson07;
 
 public class Cat {
-    String name = "КотНеизвестный";
-    int appetit = 0;
-    String catHappy = " не ел совсем...";
+    private  String name = "КотНеизвестный";
+    private  int appetit = 0;
+    private  String catHappy = " не ел совсем...";
 
     public Cat() {
     }

@@ -1,8 +1,8 @@
 package Lesson07;
 
 public class Bowl {
-    int foodAmount = 0;
-    boolean foodEnough = true;
+    private  int foodAmount = 0;
+    private  boolean foodEnough = true;
 
     public Bowl() {
     }

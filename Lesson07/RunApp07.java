@@ -1,12 +1,11 @@
 package Lesson07;
 
 public class RunApp07 {
+    //Ввод количества еды в миске
+    static int foodAmount = 140;
+    static int footAdd = 100;
+
     public static void main(String[] args) {
-        //Ввод количества еды в миске
-        int foodAmount = 5;
-        int footAdd = 100;
-
-
         Cat[] cat = new Cat[]{
                 new Cat("Мурзик", 10),
                 new Cat("Барсик", 15),
@@ -26,9 +25,8 @@ public class RunApp07 {
                 System.out.println(cat[i].getName() + " -- " + cat[i].getCatHappy());
             }
         } else {
-            System.out.print(" Еды в тарелке нет...\n Коты голодные");
+            System.out.println(" Еды в тарелке нет...\n Коты голодные");
         }
-        System.out.println();
         System.out.println("––––––––––––––––––––––––––––––");
         bowl.incrementFoodAmount(footAdd);
         System.out.println("В миску добавили " + footAdd + " еды. Теперь в миске " + bowl.getFoodAmount());
