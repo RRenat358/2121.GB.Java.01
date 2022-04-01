@@ -15,7 +15,7 @@ public class Bowl {
     }
 
     public void setFoodAmount(int foodAmount) {
-        if (this.foodAmount <= foodAmount) {
+        if (this.foodAmount >= foodAmount) {
             this.foodAmount = foodAmount;
         } else this.foodAmount = 0;
     }
@@ -24,6 +24,17 @@ public class Bowl {
         if (this.foodAmount >= eating) {
             this.foodAmount = eating;
         } else this.foodAmount = 0;
+    }
+
+
+    public void decrementFoodAmount(int eating) {
+        if (this.foodAmount >= eating) {
+            this.foodAmount -= eating;
+        } else this.foodAmount = 0;
+    }
+
+    public void incrementFoodAmount(int addFood) {
+        this.foodAmount += addFood;
     }
 
 }
