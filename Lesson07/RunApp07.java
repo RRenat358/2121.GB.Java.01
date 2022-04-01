@@ -3,7 +3,7 @@ package Lesson07;
 public class RunApp07 {
     public static void main(String[] args) {
         //Ввод количества еды в миске
-        int foodAmount = 60;
+        int foodAmount = 10;
 
         Cat cat1 = new Cat("Мурзик", 20);
 
@@ -13,8 +13,8 @@ public class RunApp07 {
         System.out.println(foodAmount + " -- еды в миске");
 
         System.out.println("––––––––––––––––––––––––––––––");
-        System.out.print(cat1.getName() + " ест: ");
-        if (foodAmount != 0) {
+
+/*        if (foodAmount != 0) {
             while (true) {
                 if (cat1.getCatHappyScale() < 100) {
                     cat1.eating2(bowl);
@@ -26,7 +26,15 @@ public class RunApp07 {
             }
         } else {
             System.out.print("Еды в тарелке нет...");
+        }*/
+        if (foodAmount != 0) {
+            cat1.eating2(bowl);
+            System.out.print(cat1.getName() + " съел: " + cat1.getAppetit() + " --→ в тарелке осталось: " + bowl.getFoodAmount());
+        } else {
+            System.out.print("Еды в тарелке нет...");
         }
+
+
         System.out.println();
 
         System.out.println("––––––––––––––––––––––––––––––");
