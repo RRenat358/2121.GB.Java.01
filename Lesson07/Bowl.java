@@ -2,6 +2,7 @@ package Lesson07;
 
 public class Bowl {
     int foodAmount = 0;
+    boolean foodEnough = true;
 
     public Bowl() {
     }
@@ -20,6 +21,15 @@ public class Bowl {
         } else this.foodAmount = 0;
     }
 
+    public boolean isFoodEnough() {
+        return foodEnough;
+    }
+
+    public void setFoodEnough(boolean foodEnough) {
+        this.foodEnough = foodEnough;
+    }
+
+    //======================================================================
     public void changeFoodAmount(int eating) {
         if (this.foodAmount >= eating) {
             this.foodAmount = eating;
@@ -30,7 +40,11 @@ public class Bowl {
     public void decrementFoodAmount(int eating) {
         if (this.foodAmount >= eating) {
             this.foodAmount -= eating;
-        } else this.foodAmount = 0;
+            this.foodEnough = true;
+        } else {
+            this.foodAmount = 0; //доедаем всё
+            this.foodEnough = false;
+        }
     }
 
     public void incrementFoodAmount(int addFood) {
