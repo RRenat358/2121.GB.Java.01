@@ -8,6 +8,10 @@ public class AppForm extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(500, 500, 450, 300);
 
+        JButton button01 = new JButton("555");
+        add(button01);
+
+
 
         setVisible(true);
     }
