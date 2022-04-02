@@ -30,9 +30,9 @@ public class appForm extends JFrame {
 
         //------------------------------
         JLabel counterValueView = new JLabel();
+        add(counterValueView, BorderLayout.CENTER);
         counterValueView.setFont(fontCourier32B);
         counterValueView.setHorizontalAlignment(SwingConstants.CENTER);
-        add(counterValueView, BorderLayout.CENTER);
         counterValueView.setText(String.valueOf(counterValue));
         counterValueView.setOpaque(true);
         counterValueView.setBackground(Color.decode("#C0C0C0"));
@@ -78,6 +78,9 @@ public class appForm extends JFrame {
                 counterValueView.setText(String.valueOf(counterValue));
             }
         });
+
+
+
 
         setVisible(true);
     }
