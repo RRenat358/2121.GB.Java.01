@@ -1,15 +1,28 @@
 package Lesson08;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AppForm extends JFrame {
+    int button01TextCounter = 0;
+
     AppForm() {
         setTitle("Форма со стрелочками");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(500, 500, 450, 300);
 
-        JButton button01 = new JButton("555");
+        JButton button01 = new JButton("Нажми сюда");
         add(button01);
+
+        button01.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                button01TextCounter++;
+                button01.setText(String.valueOf(button01TextCounter));
+            }
+        });
+
 
 
 
@@ -20,4 +33,6 @@ public class AppForm extends JFrame {
         new AppForm();
     }
 
+    private static void actionPerformed(ActionEvent e) {
+    }
 }
