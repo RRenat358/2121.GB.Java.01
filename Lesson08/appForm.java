@@ -6,8 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class appForm extends JFrame {
-    int button01TextCounter = 0;
-    int counterValue;
+    int counterValue = 0;
 
     appForm() {
         setTitle("Форма со стрелочками");
@@ -22,13 +21,7 @@ public class appForm extends JFrame {
         Font fontCourier32B = new Font("Courier New", Font.BOLD, 32);
 
 
-        //------------------------------
-        JButton buttonReset = new JButton("reset");
-        buttonReset.setFont(fontCourier24B);
-        buttonReset.setBackground(Color.white);
-        add(buttonReset, BorderLayout.NORTH);
-
-        //------------------------------
+        //======================================================================
         JLabel counterValueView = new JLabel();
         add(counterValueView, BorderLayout.CENTER);
         counterValueView.setFont(fontCourier32B);
@@ -37,6 +30,7 @@ public class appForm extends JFrame {
         counterValueView.setOpaque(true);
         counterValueView.setBackground(Color.decode("#C0C0C0"));
 
+        //------------------------------
         JButton buttonDecrement = new JButton("<");
         buttonDecrement.setFont(fontCourier32B);
         add(buttonDecrement, BorderLayout.WEST);
@@ -44,6 +38,11 @@ public class appForm extends JFrame {
         JButton buttonIncrement = new JButton(">");
         buttonIncrement.setFont(fontCourier32B);
         add(buttonIncrement, BorderLayout.EAST);
+
+        JButton buttonReset = new JButton("reset");
+        buttonReset.setFont(fontCourier24B);
+        buttonReset.setBackground(Color.white);
+        add(buttonReset, BorderLayout.NORTH);
 
         //======================================================================
         buttonDecrement.addActionListener(new ActionListener() {
@@ -84,7 +83,7 @@ public class appForm extends JFrame {
 
         setVisible(true);
     }
-
+    //======================================================================
     public static void main(String[] args) {
         new appForm();
 
