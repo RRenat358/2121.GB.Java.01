@@ -13,12 +13,17 @@ public class AppForm extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(500, 500, 450, 300);
 
-        setLayout(new GridLayout(3,3));
+        setLayout(new GridLayout(3, 3));
         Font fontArial32B = new Font("Arial", Font.BOLD, 32);
+        Font fontRoboto32B = new Font("Roboto Light", Font.BOLD, 32);
+        Font fontComicS32B = new Font("Segoe UI", Font.BOLD, 32);
+        Font fontComic2S32B = new Font("Сalibri", Font.BOLD, 32);
 
-
+        //------------------------------
         JButton button01 = new JButton("Нажми сюда");
-        button01.setFont(fontArial32B);
+//        button01.setFont(fontArial32B);
+//        button01.setFont(fontRoboto32B);
+        button01.setFont(fontComic2S32B);
         add(button01);
 
         button01.addActionListener(new ActionListener() {
@@ -28,8 +33,7 @@ public class AppForm extends JFrame {
                 button01.setText(String.valueOf(button01TextCounter));
             }
         });
-
-
+        //------------------------------
 
 
         setVisible(true);
