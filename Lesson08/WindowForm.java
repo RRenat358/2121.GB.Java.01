@@ -15,16 +15,11 @@ public class WindowForm extends JFrame {
         int windowHeight = 500;
         setBounds(200, 200, windowWidth, windowHeight);
 
-        Font fontArial32B = new Font("Arial", Font.BOLD, 32);
-        Font fontCalibri32B = new Font("Calibri", Font.BOLD, 32);
-        Font fontSegoe32B = new Font("Segoe UI", Font.BOLD, 32);
         Font fontCourier18B = new Font("Courier New", Font.BOLD, 18);
         Font fontCourier24B = new Font("Courier New", Font.BOLD, 24);
-        Font fontCourier32B = new Font("Courier New", Font.BOLD, 32);
 
         int sidebarLeftSizeW = 160;
         int sidebarLeftSizeH = windowHeight;
-//        Dimension sidebarLeftSize = new Dimension(sidebarLeftSizeW, sidebarLeftSizeH);
 
         //======================================================================
         JPanel fieldSidebarLeft = new JPanel();
@@ -55,11 +50,12 @@ public class WindowForm extends JFrame {
         fieldSidebarLeft.add(fieldSidebarLeft3);
 
         //======================================================================
-        JButton buttonDecrement = new JButton("<");
+        JButton buttonDecrement = new JButton("-");
         buttonDecrement.setPreferredSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
         buttonDecrement.setMaximumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
         buttonDecrement.setMinimumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonDecrement.setFont(fontCourier18B);
+        buttonDecrement.setMargin(new Insets(1,1,1,1));
+        buttonDecrement.setFont(fontCourier24B);
 
         JLabel counterValueView = new JLabel();
         counterValueView.setOpaque(true);
@@ -71,11 +67,12 @@ public class WindowForm extends JFrame {
         counterValueView.setText(String.valueOf(counterValue));
         counterValueView.setBackground(Color.decode("#C0C0C0"));
 
-        JButton buttonIncrement = new JButton(">");
+        JButton buttonIncrement = new JButton("+");
         buttonIncrement.setPreferredSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
         buttonIncrement.setMaximumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
         buttonIncrement.setMinimumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonIncrement.setFont(fontCourier18B);
+        buttonIncrement.setMargin(new Insets(1,1,1,1));
+        buttonIncrement.setFont(fontCourier24B);
 
         JPanel grid2 = new JPanel();
         grid2.setLayout(new GridLayout(1, 3, 0, 0));
@@ -84,7 +81,41 @@ public class WindowForm extends JFrame {
         grid2.add(buttonIncrement);
         fieldSidebarLeft2.add(grid2);
 
+        //======================================================================
+        JButton buttonDecrement2 = new JButton("-10");
+        buttonDecrement2.setPreferredSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
+        buttonDecrement2.setMaximumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
+        buttonDecrement2.setMinimumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
+        buttonDecrement2.setMargin(new Insets(1,1,1,1));
+        buttonDecrement2.setFont(fontCourier18B);
+
+        JLabel counterValueView2 = new JLabel();
+        counterValueView2.setOpaque(true);
+        counterValueView2.setPreferredSize(new Dimension(sidebarLeftSizeW/13,sidebarLeftSizeH/12));
+        counterValueView2.setMaximumSize(new Dimension(sidebarLeftSizeW/13,sidebarLeftSizeH/12));
+        counterValueView2.setMinimumSize(new Dimension(sidebarLeftSizeW/13,sidebarLeftSizeH/12));
+        counterValueView2.setFont(fontCourier24B);
+        counterValueView2.setHorizontalAlignment(JLabel.CENTER);
+        counterValueView2.setText(String.valueOf(counterValue));
+        counterValueView2.setBackground(Color.decode("#CCCCCC"));
+        counterValueView2.setForeground(Color.decode("#CCCCCC"));
+
+        JButton buttonIncrement2 = new JButton("+10");
+        buttonIncrement2.setPreferredSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
+        buttonIncrement2.setMaximumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
+        buttonIncrement2.setMinimumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
+        buttonIncrement2.setMargin(new Insets(1,1,1,1));
+        buttonIncrement2.setFont(fontCourier18B);
+
         //------------------------------
+        JPanel grid3 = new JPanel();
+        grid3.setLayout(new GridLayout(1, 3, 0, 0));
+        grid3.add(buttonDecrement2);
+        grid3.add(counterValueView2);
+        grid3.add(buttonIncrement2);
+        fieldSidebarLeft2.add(grid3);
+
+        //======================================================================
         JButton buttonReset = new JButton("reset");
         buttonReset.setPreferredSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
         buttonReset.setMaximumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
@@ -100,10 +131,9 @@ public class WindowForm extends JFrame {
         fieldSidebarLeft5.setMaximumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
         fieldSidebarLeft5.setMinimumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
         fieldSidebarLeft5.setBackground(Color.decode("#DDDDAA"));
-        fieldSidebarLeft5.setFont(fontCourier24B);
+        fieldSidebarLeft5.setFont(fontCourier18B);
         fieldSidebarLeft5.setHorizontalAlignment(JLabel.CENTER);
         fieldSidebarLeft3.add(fieldSidebarLeft5);
-
 
         //======================================================================
         JPanel fieldGame = new JPanel();
@@ -119,10 +149,6 @@ public class WindowForm extends JFrame {
         add(grid1);
 
         //======================================================================
-
-
-
-        //======================================================================
         buttonDecrement.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -130,6 +156,8 @@ public class WindowForm extends JFrame {
                 counterValueView.setBackground(Color.decode("#FFDE99"));
                 buttonDecrement.setForeground(Color.red);
                 buttonIncrement.setForeground(null);
+                buttonDecrement2.setForeground(null);
+                buttonIncrement2.setForeground(null);
                 counterValueView.setText(String.valueOf(counterValue));
             }
         });
@@ -141,10 +169,40 @@ public class WindowForm extends JFrame {
                 counterValueView.setBackground(Color.decode("#E3FF96"));
                 buttonDecrement.setForeground(null);
                 buttonIncrement.setForeground(Color.green);
+                buttonDecrement2.setForeground(null);
+                buttonIncrement2.setForeground(null);
                 counterValueView.setText(String.valueOf(counterValue));
+//                counterValueView2.setText(String.valueOf(counterValue));
             }
         });
 
+        buttonDecrement2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                counterValue -= 10;
+                counterValueView.setBackground(Color.decode("#FFDE99"));
+                buttonDecrement.setForeground(null);
+                buttonIncrement.setForeground(null);
+                buttonDecrement2.setForeground(Color.red);
+                buttonIncrement2.setForeground(null);
+                counterValueView.setText(String.valueOf(counterValue));
+//                counterValueView2.setText(String.valueOf(counterValue));
+            }
+        });
+
+        buttonIncrement2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                counterValue += 10;
+                counterValueView.setBackground(Color.decode("#E3FF96"));
+                buttonDecrement.setForeground(null);
+                buttonIncrement.setForeground(null);
+                buttonDecrement2.setForeground(null);
+                buttonIncrement2.setForeground(Color.green);
+                counterValueView.setText(String.valueOf(counterValue));
+            }
+        });
+        //------------------------------
         buttonReset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -152,16 +210,14 @@ public class WindowForm extends JFrame {
                 counterValueView.setBackground(null);
                 buttonDecrement.setForeground(null);
                 buttonIncrement.setForeground(null);
+                buttonDecrement2.setForeground(null);
+                buttonIncrement2.setForeground(null);
                 counterValueView.setText(String.valueOf(counterValue));
             }
         });
 
-
-
         //======================================================================
         setVisible(true);
     }
-
-    //======================================================================
 
 }
