@@ -5,10 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class appForm extends JFrame {
+public class WindowForm extends JFrame {
     int counterValue = 0;
 
-    appForm() {
+    WindowForm() {
         setTitle("Field Game");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         int windowWidth = 750;
@@ -163,10 +163,5 @@ public class appForm extends JFrame {
     }
 
     //======================================================================
-    public static void main(String[] args) {
-        new appForm();
-
-
-    }
 
 }
