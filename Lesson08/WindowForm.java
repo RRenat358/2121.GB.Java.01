@@ -24,7 +24,6 @@ public class WindowForm extends JFrame {
 
         //======================================================================
         JPanel fieldSidebarLeft = new JPanel();
-        fieldSidebarLeft.setOpaque(true);
         //todo H=getHeight()+repaint();
         elementSizeJPanel(fieldSidebarLeft, sidebarLeftSizeW, sidebarLeftSizeH);
         fieldSidebarLeft.setLayout(new BoxLayout(fieldSidebarLeft, BoxLayout.Y_AXIS));
@@ -32,14 +31,12 @@ public class WindowForm extends JFrame {
 
         //top 50%
         JPanel fieldSidebarLeft2 = new JPanel();
-        fieldSidebarLeft2.setOpaque(true);
         elementSizeJPanel(fieldSidebarLeft2, sidebarLeftSizeW, sidebarLeftSizeH/2);
         fieldSidebarLeft2.setBackground(Color.decode("#AAAAAA"));
         fieldSidebarLeft.add(fieldSidebarLeft2);
 
         //bottom 50%
         JPanel fieldSidebarLeft3 = new JPanel();
-        fieldSidebarLeft3.setOpaque(true);
         elementSizeJPanel(fieldSidebarLeft3, sidebarLeftSizeW, sidebarLeftSizeH/2);
         fieldSidebarLeft3.setBackground(Color.decode("#EEEEAA"));
         fieldSidebarLeft.add(fieldSidebarLeft3);
@@ -51,7 +48,6 @@ public class WindowForm extends JFrame {
         buttonDecrement.setFont(fontCourier24B);
 
         JLabel counterValueView = new JLabel();
-        counterValueView.setOpaque(true);
         elementSizeJLabel(counterValueView, sidebarLeftSizeW/3, sidebarLeftSizeH/12);
         counterValueView.setFont(fontCourier24B);
         counterValueView.setHorizontalAlignment(JLabel.CENTER);
@@ -77,7 +73,6 @@ public class WindowForm extends JFrame {
         buttonDecrement2.setFont(fontCourier18B);
 
         JLabel counterValueView2 = new JLabel();
-        counterValueView2.setOpaque(true);
         elementSizeJLabel(counterValueView2, sidebarLeftSizeW/13, sidebarLeftSizeH/12);
         counterValueView2.setFont(fontCourier24B);
         counterValueView2.setHorizontalAlignment(JLabel.CENTER);
@@ -107,7 +102,6 @@ public class WindowForm extends JFrame {
 
         //======================================================================
         JLabel fieldSidebarLeft5 = new JLabel("Sсore");
-        fieldSidebarLeft5.setOpaque(true);
         elementSizeJLabel(fieldSidebarLeft5, sidebarLeftSizeW, sidebarLeftSizeH/12);
         fieldSidebarLeft5.setBackground(Color.decode("#DDDDAA"));
         fieldSidebarLeft5.setFont(fontCourier18B);
@@ -202,15 +196,18 @@ public class WindowForm extends JFrame {
         element.setPreferredSize(new Dimension(sizeW, sizeH));
         element.setMaximumSize(new Dimension(sizeW, sizeH));
         element.setMinimumSize(new Dimension(sizeW, sizeH));
+        element.setOpaque(true);
     }
     public void elementSizeJLabel(JLabel element, int sizeW, int sizeH) {
         element.setPreferredSize(new Dimension(sizeW, sizeH));
         element.setMaximumSize(new Dimension(sizeW, sizeH));
         element.setMinimumSize(new Dimension(sizeW, sizeH));
+        element.setOpaque(true);
     }
     public void elementSizeJButton(JButton element, int sizeW, int sizeH) {
         element.setPreferredSize(new Dimension(sizeW, sizeH));
         element.setMaximumSize(new Dimension(sizeW, sizeH));
         element.setMinimumSize(new Dimension(sizeW, sizeH));
+        element.setOpaque(true);
     }
 }
