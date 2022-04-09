@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class WindowForm extends JFrame {
     int counterValue = 0;
 
@@ -25,53 +26,41 @@ public class WindowForm extends JFrame {
         JPanel fieldSidebarLeft = new JPanel();
         fieldSidebarLeft.setOpaque(true);
         //todo H=getHeight()+repaint();
-        fieldSidebarLeft.setPreferredSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH));
-        fieldSidebarLeft.setMaximumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH));
-        fieldSidebarLeft.setMinimumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH));
+        elementSizeJPanel(fieldSidebarLeft, sidebarLeftSizeW, sidebarLeftSizeH);
         fieldSidebarLeft.setLayout(new BoxLayout(fieldSidebarLeft, BoxLayout.Y_AXIS));
         fieldSidebarLeft.setBackground(Color.decode("#CCCCCC"));
 
         //top 50%
         JPanel fieldSidebarLeft2 = new JPanel();
         fieldSidebarLeft2.setOpaque(true);
-        fieldSidebarLeft2.setPreferredSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/2));
-        fieldSidebarLeft2.setMaximumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/2));
-        fieldSidebarLeft2.setMinimumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/2));
+        elementSizeJPanel(fieldSidebarLeft2, sidebarLeftSizeW, sidebarLeftSizeH/2);
         fieldSidebarLeft2.setBackground(Color.decode("#AAAAAA"));
         fieldSidebarLeft.add(fieldSidebarLeft2);
 
         //bottom 50%
         JPanel fieldSidebarLeft3 = new JPanel();
         fieldSidebarLeft3.setOpaque(true);
-        fieldSidebarLeft2.setPreferredSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/2));
-        fieldSidebarLeft2.setMaximumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/2));
-        fieldSidebarLeft2.setMinimumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/2));
+        elementSizeJPanel(fieldSidebarLeft3, sidebarLeftSizeW, sidebarLeftSizeH/2);
         fieldSidebarLeft3.setBackground(Color.decode("#EEEEAA"));
         fieldSidebarLeft.add(fieldSidebarLeft3);
 
         //======================================================================
         JButton buttonDecrement = new JButton("-");
-        buttonDecrement.setPreferredSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonDecrement.setMaximumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonDecrement.setMinimumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonDecrement.setMargin(new Insets(1,1,1,1));
+        elementSizeJButton(buttonDecrement, sidebarLeftSizeW/3, sidebarLeftSizeH/12);
+        buttonDecrement.setMargin(new Insets(1, 1, 1, 1));
         buttonDecrement.setFont(fontCourier24B);
 
         JLabel counterValueView = new JLabel();
         counterValueView.setOpaque(true);
-        counterValueView.setPreferredSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        counterValueView.setMaximumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        counterValueView.setMinimumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
+        elementSizeJLabel(counterValueView, sidebarLeftSizeW/3, sidebarLeftSizeH/12);
         counterValueView.setFont(fontCourier24B);
         counterValueView.setHorizontalAlignment(JLabel.CENTER);
         counterValueView.setText(String.valueOf(counterValue));
         counterValueView.setBackground(Color.decode("#C0C0C0"));
 
         JButton buttonIncrement = new JButton("+");
-        buttonIncrement.setPreferredSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonIncrement.setMaximumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonIncrement.setMinimumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonIncrement.setMargin(new Insets(1,1,1,1));
+        elementSizeJButton(buttonIncrement, sidebarLeftSizeW/3, sidebarLeftSizeH/12);
+        buttonIncrement.setMargin(new Insets(1, 1, 1, 1));
         buttonIncrement.setFont(fontCourier24B);
 
         JPanel grid2 = new JPanel();
@@ -83,17 +72,13 @@ public class WindowForm extends JFrame {
 
         //======================================================================
         JButton buttonDecrement2 = new JButton("-10");
-        buttonDecrement2.setPreferredSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonDecrement2.setMaximumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonDecrement2.setMinimumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonDecrement2.setMargin(new Insets(1,1,1,1));
+        elementSizeJButton(buttonDecrement2, sidebarLeftSizeW/3, sidebarLeftSizeH/12);
+        buttonDecrement2.setMargin(new Insets(1, 1, 1, 1));
         buttonDecrement2.setFont(fontCourier18B);
 
         JLabel counterValueView2 = new JLabel();
         counterValueView2.setOpaque(true);
-        counterValueView2.setPreferredSize(new Dimension(sidebarLeftSizeW/13,sidebarLeftSizeH/12));
-        counterValueView2.setMaximumSize(new Dimension(sidebarLeftSizeW/13,sidebarLeftSizeH/12));
-        counterValueView2.setMinimumSize(new Dimension(sidebarLeftSizeW/13,sidebarLeftSizeH/12));
+        elementSizeJLabel(counterValueView2, sidebarLeftSizeW/13, sidebarLeftSizeH/12);
         counterValueView2.setFont(fontCourier24B);
         counterValueView2.setHorizontalAlignment(JLabel.CENTER);
         counterValueView2.setText(String.valueOf(counterValue));
@@ -101,10 +86,8 @@ public class WindowForm extends JFrame {
         counterValueView2.setForeground(Color.decode("#CCCCCC"));
 
         JButton buttonIncrement2 = new JButton("+10");
-        buttonIncrement2.setPreferredSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonIncrement2.setMaximumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonIncrement2.setMinimumSize(new Dimension(sidebarLeftSizeW/3,sidebarLeftSizeH/12));
-        buttonIncrement2.setMargin(new Insets(1,1,1,1));
+        elementSizeJButton(buttonIncrement2, sidebarLeftSizeW/3, sidebarLeftSizeH/12);
+        buttonIncrement2.setMargin(new Insets(1, 1, 1, 1));
         buttonIncrement2.setFont(fontCourier18B);
 
         //------------------------------
@@ -117,9 +100,7 @@ public class WindowForm extends JFrame {
 
         //======================================================================
         JButton buttonReset = new JButton("reset");
-        buttonReset.setPreferredSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
-        buttonReset.setMaximumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
-        buttonReset.setMinimumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
+        elementSizeJButton(buttonReset, sidebarLeftSizeW, sidebarLeftSizeH/12);
         buttonReset.setFont(fontCourier18B);
         buttonReset.setBackground(Color.decode("#EECCAA"));
         fieldSidebarLeft2.add(buttonReset, "Top");
@@ -127,9 +108,7 @@ public class WindowForm extends JFrame {
         //======================================================================
         JLabel fieldSidebarLeft5 = new JLabel("Sсore");
         fieldSidebarLeft5.setOpaque(true);
-        fieldSidebarLeft5.setPreferredSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
-        fieldSidebarLeft5.setMaximumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
-        fieldSidebarLeft5.setMinimumSize(new Dimension(sidebarLeftSizeW,sidebarLeftSizeH/12));
+        elementSizeJLabel(fieldSidebarLeft5, sidebarLeftSizeW, sidebarLeftSizeH/12);
         fieldSidebarLeft5.setBackground(Color.decode("#DDDDAA"));
         fieldSidebarLeft5.setFont(fontCourier18B);
         fieldSidebarLeft5.setHorizontalAlignment(JLabel.CENTER);
@@ -219,5 +198,19 @@ public class WindowForm extends JFrame {
         //======================================================================
         setVisible(true);
     }
-
+    public void elementSizeJPanel(JPanel element, int sizeW, int sizeH) {
+        element.setPreferredSize(new Dimension(sizeW, sizeH));
+        element.setMaximumSize(new Dimension(sizeW, sizeH));
+        element.setMinimumSize(new Dimension(sizeW, sizeH));
+    }
+    public void elementSizeJLabel(JLabel element, int sizeW, int sizeH) {
+        element.setPreferredSize(new Dimension(sizeW, sizeH));
+        element.setMaximumSize(new Dimension(sizeW, sizeH));
+        element.setMinimumSize(new Dimension(sizeW, sizeH));
+    }
+    public void elementSizeJButton(JButton element, int sizeW, int sizeH) {
+        element.setPreferredSize(new Dimension(sizeW, sizeH));
+        element.setMaximumSize(new Dimension(sizeW, sizeH));
+        element.setMinimumSize(new Dimension(sizeW, sizeH));
+    }
 }
