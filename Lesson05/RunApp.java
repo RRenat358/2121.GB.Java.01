@@ -1,4 +1,4 @@
-package lesson05;
+package Lesson05;
 
 public class RunApp {
     public static void main(String[] args) {

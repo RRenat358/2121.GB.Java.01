@@ -1,4 +1,4 @@
-package lesson05;
+package Lesson05;
 
 public class Employe {
     String name = "ИМЯ";
