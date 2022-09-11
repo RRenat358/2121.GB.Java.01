@@ -7,8 +7,8 @@ public class TicTacToe {
     public static Scanner sc = new Scanner(System.in);
     public static Random random = new Random();
     //Ввод данных здесь
-    public static int arrMapLength = 3;
-    public static final int whatStepInLineToWin = 3;
+    public static int arrMapLength = 5;
+    public static final int whatStepInLineToWin = 5;
 
     static String[][] arrMap = new String[arrMapLength][arrMapLength];
 
